@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledPopular = styled.section`
-  height: 5473px;
+  height: 602px;
   background-color: #f4eaea;
 `;
 

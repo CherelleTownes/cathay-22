@@ -44,5 +44,5 @@ export default function Header() {
       <Link href="#special-events">Special Events</Link>
       <Link href="#directions">Directions</Link>
     </Nav>
-    </StyledHeader>;
+    </StyledHeader>
 }
