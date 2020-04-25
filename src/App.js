@@ -1,9 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Route, Link } from "react-router-dom";
 import './App.css';
 
-// https://agitated-tereshkova-ead074.netlify.app/
+
 
 function App() {
   return (
