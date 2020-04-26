@@ -6,6 +6,8 @@ import Popular from './components/Popular';
 import Cathay from './components/Cathay';
 import Special from './components/Special';
 import About from './components/About';
+import Location from './components/Location';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
       <Cathay />
       <Special />
       <About />
+      <Location />
+      <Footer />
     </>
   );
 }
