@@ -11,7 +11,7 @@ const Grid = styled.div`
   grid-template-columns: 304px 1fr 1fr;
   max-width: 1440px;
   height: 100%;
-  padding: 18px 181px 40px 126px;
+  padding: 26px 181px 40px 126px;
   margin: 0 auto;
 `;
 
@@ -45,7 +45,7 @@ export default function Footer() {
             <br />
             SPRINGFIELD, NJ 07081
           </Text>
-          <Text>Tel: 973-467-8688</Text>
+          <Text>TEL: 973-467-8688</Text>
         </TextBox>
         <TextBox>
           <Heading>HOURS</Heading>
