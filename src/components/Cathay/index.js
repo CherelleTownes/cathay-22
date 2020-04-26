@@ -34,7 +34,7 @@ const Label = styled.h1`
 `;
 
 const Text = styled.p`
-  /* width: 545px; */
+  max-width: 545px;
   font-size: 17px;
   font-weight: 500;
   font-stretch: normal;

@@ -36,7 +36,7 @@ const Label = styled.h1`
 `;
 
 const Text = styled.p`
-  width: 588px;
+  max-width: 588px;
   font-size: 17px;
   font-weight: 500;
   font-stretch: normal;
@@ -64,7 +64,7 @@ const Button = styled.button`
 
 export default function Special() {
   return (
-    <StyledSpecial>
+    <StyledSpecial id="special">
       <ContainerText>
         <Label>SPECIAL EVENTS</Label>
         <Text>
