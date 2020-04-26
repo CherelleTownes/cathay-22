@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Iframe from 'react-iframe';
 
 const StyledSection = styled.section`
-  height: 770px;
+  height: 775px;
   background-color: #f4eaea;
 `;
 
@@ -14,7 +14,7 @@ const Layout = styled.div`
   grid-row-gap: 48px;
   height: 100%;
   max-width: 1059px;
-  padding: 118px 0px 50px 0px;
+  padding: 118px 0px 64px 0px;
   margin: 0 auto;
 `;
 
@@ -34,6 +34,7 @@ const SectionTitle = styled.h2`
   letter-spacing: 1.75px;
   color: #000000;
   justify-self: start;
+  margin-top: 21px;
 `;
 
 const InfoText = styled.p`
@@ -74,7 +75,7 @@ const Reservation = styled.p`
 
 export default function Location() {
   return (
-    <StyledSection>
+    <StyledSection id="directions">
       <Layout>
         <LocationInfo>
           <SectionTitle>OUR LOCATION</SectionTitle>
