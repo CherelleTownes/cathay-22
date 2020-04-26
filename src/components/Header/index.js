@@ -5,11 +5,14 @@ const StyledHeader = styled.header`
   display: flex;
   background-color: #a32e02;
   height: 169px;
+  position: fixed;
+  width: 100%;
 `;
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+
 `;
 
 const Link = styled.a`
