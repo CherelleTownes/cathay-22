@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import hero from '../../assets/images/hero-cropped.png';
+import hero from '../../assets/images/hero.png';
 
 const StyledHero = styled.section`
   background: url(${hero}) rgba(0,0,0,0.3);
-  height: 602px;
+  height: 771px;
   background-size: cover;
   display:flex;
   flex-direction:column;
