@@ -4,8 +4,7 @@ import special from '../../assets/images/special-events.png';
 
 const StyledSpecial = styled.section`
   height: 627px;
-  background-color: grey;
-  /* background-color: #a32e02; */
+  background-color: #a32e02;
   display: flex;
   flex-direction: row;
   align-items: center;

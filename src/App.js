@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Popular from './components/Popular';
 import Cathay from './components/Cathay';
 import Special from './components/Special';
+import About from './components/About';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Popular />
       <Cathay />
       <Special />
+      <About />
     </>
   );
 }
