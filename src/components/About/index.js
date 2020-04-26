@@ -52,7 +52,7 @@ const Link = styled.div`
 
 export default function About() {
   return (
-    <StyledAbout>
+    <StyledAbout id="about">
       <Label>ABOUT US</Label>
       <Text>
         Artistry and skillful ingenuity have enabled the Wang family to bring to
