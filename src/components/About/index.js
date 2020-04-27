@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import about from '../../assets/images/about-us-background.jpg';
+import open_arrow from '../../assets/images/arrows/about-arrow-down.png';
+import close_arrow from '../../assets/images/arrows/about-arrow-up.png';
 
 const StyledAbout = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -55,9 +57,20 @@ const Text = styled.p`
   text-align: center;
 `;
 
-const Link = styled.div`
+const ContainerLink = styled.div`
   width: 1023px;
-  height: 33px;
+  height: 40px;
+  grid-column: 2;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Link = styled.h2`
+  width: ${(props) => props.width};
+  /* width: 220px; */
+  height: 35px;
   font-size: 25px;
   font-weight: bold;
   font-stretch: normal;
@@ -66,8 +79,12 @@ const Link = styled.div`
   letter-spacing: 3.88px;
   color: #ffffff;
   text-align: center;
-  grid-column: 2;
-  grid-row: 4;
+`;
+
+const LinkImg = styled.img`
+  width: 43px;
+  height: 35px;
+  border-radius: 5px;
 `;
 
 export default function About() {
@@ -105,11 +122,19 @@ export default function About() {
                 At Cathay 22, a family meal, a romantic dinner, or a business
                 luncheon will always be enjoyable.
               </Text>
-              <Link onClick={(e) => handleOpen(e)}>CLOSED</Link>)
+              <ContainerLink>
+                <Link width="130px">CLOSED</Link>)
+                <LinkImg src={close_arrow} onClick={(e) => handleOpen(e)} />
+              </ContainerLink>
             </>
           )}
         </ContainerText>
-        {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
+        {!isOpen && (
+          <ContainerLink>
+            <Link width="210px">FULL STORY</Link>
+            <LinkImg src={open_arrow} onClick={(e) => handleOpen(e)} />
+          </ContainerLink>
+        )}
       </Layout>
     </StyledAbout>
   );

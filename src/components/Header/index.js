@@ -70,10 +70,10 @@ export default function Header() {
       TEL: 973-467-8688 • 124 Rt. 22 West Springfield, NJ 07081
     </Contact>
     <Nav>
-      <Link href="#about">About</Link>
-      <Link href="#menu">Menu</Link>
-      <Link href="#special-events">Special Events</Link>
-      <Link href="#directions">Directions</Link>
+      <Link href="#about">ABOUT</Link>
+      <Link href="#menu">MENU</Link>
+      <Link href="#special-events">SPECIAL EVENTS</Link>
+      <Link href="#directions">DIRECTIONS</Link>
     </Nav>
     </Layout>
     </StyledHeader>
