@@ -8,13 +8,9 @@ const StyledAbout = styled.section`
   background-size: cover;
   display: grid;
   grid-template-columns: 209px 1023px 228px;
-  grid-template-rows: 133px 25px 311px auto;
-
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  grid-template-rows: 133px 25px 311px 241px;
 `;
+
 const Label = styled.h1`
   width: 1023px;
   height: 41px;
@@ -88,7 +84,6 @@ export default function About() {
           work magic with spices and ingredients imported directly from China,
           such as star anise Ba-jhiao and prickly seeds Hua-Jhiao.
         </Text>
-        {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
         {isOpen && (
           <>
             <Text>
@@ -105,6 +100,7 @@ export default function About() {
           </>
         )}
       </ContainerText>
+      {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
     </StyledAbout>
   );
 }
