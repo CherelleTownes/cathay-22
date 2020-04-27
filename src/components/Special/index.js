@@ -111,7 +111,7 @@ export default function Special() {
   };
 
   return (
-    <StyledSpecial id="special">
+    <StyledSpecial id="special-events">
       <Layout>
         <Label>SPECIAL EVENTS</Label>
         <ContainerText>
