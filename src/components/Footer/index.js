@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import tripAdvisor from '../../assets/images/tripadvisor.png';
+import yelp from '../../assets/images/yelp.png';
 
 const StyledFooter = styled.footer`
   height: 183px;
@@ -34,6 +36,18 @@ const Text = styled.p`
   color: #ffffff;
 `;
 
+const LogoBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+const Logo = styled.img`
+  height: 88px;
+  width: 88px;
+  margin-left: 32px;
+`;
+
 export default function Footer() {
   return (
     <StyledFooter>
@@ -58,6 +72,22 @@ export default function Footer() {
           </Text>
           <Text> </Text>
         </TextBox>
+        <LogoBox>
+          <a
+            href="https://www.tripadvisor.com/Restaurant_Review-g46842-d541995-Reviews-Cathay_22-Springfield_New_Jersey.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Logo src={tripAdvisor} />
+          </a>
+          <a
+            href="https://www.yelp.com/biz/cathay-22-springfield"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Logo src={yelp} />
+          </a>
+        </LogoBox>
       </Grid>
     </StyledFooter>
   );
