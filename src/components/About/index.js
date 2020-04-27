@@ -6,15 +6,17 @@ const StyledAbout = styled.section`
   background: url(${about});
   height: 710px;
   background-size: cover;
-  display: grid;
-  grid-template-columns: 209px 1023px 228px;
-  grid-template-rows: 133px 25px 311px auto;
-
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
 `;
+
+const Layout = styled.div`
+  display: grid;
+  grid-template-columns: 205px 1023px 212px;
+  grid-template-rows: 133px 25px 311px auto;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+`;
+
 const Label = styled.h1`
   width: 1023px;
   height: 41px;
@@ -75,36 +77,38 @@ export default function About() {
 
   return (
     <StyledAbout id="about">
-      <Label>ABOUT US</Label>
-      <ContainerText>
-        <Text>
-          Artistry and skillful ingenuity have enabled the Wang family to bring
-          to fruition its dream of creating authentic, savory Sichuan cuisine
-          for discerning diners near and far.
-        </Text>
-        <Text>
-          Results don't lie, Cathay 22, which jumped onto the scene in 1985,
-          boasts award-winning chefs from Sichuan and other regions in China who
-          work magic with spices and ingredients imported directly from China,
-          such as star anise Ba-jhiao and prickly seeds Hua-Jhiao.
-        </Text>
-        {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
-        {isOpen && (
-          <>
-            <Text>
-              One-of-a-kind dishes marry true traditions with a supervising
-              kick, as evidenced in Cathay 22's "crazy beef" (beef tenderloin in
-              an unforgettable spicy oil) and "Golden Coins" (golden fried puffs
-              filled with meat and eggplant).
-            </Text>
-            <Text>
-              At Cathay 22, a family meal, a romantic dinner, or a business
-              luncheon will always be enjoyable.
-            </Text>
-            <Link onClick={(e) => handleOpen(e)}>CLOSED</Link>)
-          </>
-        )}
-      </ContainerText>
+      <Layout>
+        <Label>ABOUT US</Label>
+        <ContainerText>
+          <Text>
+            Artistry and skillful ingenuity have enabled the Wang family to
+            bring to fruition its dream of creating authentic, savory Sichuan
+            cuisine for discerning diners near and far.
+          </Text>
+          <Text>
+            Results don't lie, Cathay 22, which jumped onto the scene in 1985,
+            boasts award-winning chefs from Sichuan and other regions in China
+            who work magic with spices and ingredients imported directly from
+            China, such as star anise Ba-jhiao and prickly seeds Hua-Jhiao.
+          </Text>
+          {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
+          {isOpen && (
+            <>
+              <Text>
+                One-of-a-kind dishes marry true traditions with a supervising
+                kick, as evidenced in Cathay 22's "crazy beef" (beef tenderloin
+                in an unforgettable spicy oil) and "Golden Coins" (golden fried
+                puffs filled with meat and eggplant).
+              </Text>
+              <Text>
+                At Cathay 22, a family meal, a romantic dinner, or a business
+                luncheon will always be enjoyable.
+              </Text>
+              <Link onClick={(e) => handleOpen(e)}>CLOSED</Link>)
+            </>
+          )}
+        </ContainerText>
+      </Layout>
     </StyledAbout>
   );
 }
