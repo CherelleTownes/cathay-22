@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import about from '../../assets/images/about-us-background.jpg';
 
 const StyledAbout = styled.section`
-  background: url(${about});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${about});
+
   height: 710px;
   background-size: cover;
 `;
@@ -91,7 +93,6 @@ export default function About() {
             who work magic with spices and ingredients imported directly from
             China, such as star anise Ba-jhiao and prickly seeds Hua-Jhiao.
           </Text>
-          {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
           {isOpen && (
             <>
               <Text>
@@ -108,6 +109,7 @@ export default function About() {
             </>
           )}
         </ContainerText>
+        {!isOpen && <Link onClick={(e) => handleOpen(e)}>FULL STORY</Link>}
       </Layout>
     </StyledAbout>
   );
