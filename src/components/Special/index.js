@@ -5,21 +5,17 @@ import special from '../../assets/images/special-events.png';
 const StyledSpecial = styled.section`
   height: 627px;
   background-color: #a32e02;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 156px 606px 83px 377px 217px;
+  grid-template-rows: 136px 25px 230px 152px 83px;
 `;
 
 const SpecialImg = styled.img`
   width: 377px;
   height: 492px;
   border-radius: 15px;
-`;
-
-const ContainerText = styled.div`
-  width: 650px;
-  height: 450px;
+  grid-area: 1 / col4-start / last-line / 4;
+  align-self: center;
 `;
 
 const Label = styled.h1`
@@ -32,11 +28,22 @@ const Label = styled.h1`
   letter-spacing: 1.75px;
   color: #ffffff;
   text-align: right;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: end;
+`;
+
+const ContainerText = styled.div`
+  width: 650px;
+  height: 156px;
+  grid-column: 2;
+  grid-row: 3;
 `;
 
 const Text = styled.p`
-  max-width: 588px;
+  max-width: 606px;
   font-size: 17px;
   font-weight: 500;
   font-stretch: normal;
@@ -48,25 +55,38 @@ const Text = styled.p`
   text-align: right;
 `;
 const ContainerButton = styled.div`
-  width: 650px;
-  height: 170px;
+  width: 580px;
+  height: 152px;
+  grid-column: 2;
+  grid-row: 4;
+  justify-self: end;
+
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: flex-end;
 `;
+
 const Button = styled.button`
-  width: 175px;
+  width: ${(props) => props.width};
   height: 60px;
   border-radius: 44px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.4);
   background-color: #f4eaea;
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.9px;
+  color: #000000;
 `;
 
 export default function Special() {
   return (
     <StyledSpecial id="special">
+      <Label>SPECIAL EVENTS</Label>
       <ContainerText>
-        <Label>SPECIAL EVENTS</Label>
         <Text>
           At Cathay 22, a celebration is always memorable. Custom banquet menus,
           party room, and catering services are available.
@@ -79,13 +99,13 @@ export default function Special() {
           Call us to request our Special Events menu. And be sure to check back
           here for the Special Events that we have throughout the year.
         </Text>
-        <ContainerButton>
-          <a href="tel:+1-973-467-8688">
-            <Button>CALL US</Button>
-          </a>
-          <Button>CHINESE NEW YEAR MENU '20</Button>
-        </ContainerButton>
       </ContainerText>
+      <ContainerButton>
+        <a href="tel:+1-973-467-8688">
+          <Button width="175px">CALL US</Button>
+        </a>
+        <Button width="204px">CHINESE NEW YEAR MENU '20</Button>
+      </ContainerButton>
       <SpecialImg src={special} />
     </StyledSpecial>
   );
