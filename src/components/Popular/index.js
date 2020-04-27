@@ -58,29 +58,79 @@ const responsive = {
   },
 };
 
-const images = [
-  basilBeef,
-  beefSichuan,
-  pepperChicken,
-  spicyDumplings,
-  seafoodNoodle,
-  prawnsCreamy,
-  danDan,
+const dishes = [
+  {
+    name: 'Basil with Beef',
+    price: '$14.95',
+    image: basilBeef,
+  },
+  {
+    name: 'Crazy Beef Sichuan Style',
+    price: '$18.95',
+    image: beefSichuan,
+  },
+  {
+    name: '3 Pepper Chicken',
+    price: '$15.95',
+    image: pepperChicken,
+  },
+  {
+    name: 'Spicy Dumpling',
+    price: '$6.50',
+    image: spicyDumplings,
+  },
+  {
+    name: 'Seafood in a Noodle Basket',
+    price: '$21.95',
+    image: seafoodNoodle,
+  },
+  {
+    name: 'Prawns with Creamy Marnier Sauce',
+    price: '$22.95',
+    image: prawnsCreamy,
+  },
+  {
+    name: 'Dan-Dan Mein Noodle',
+    price: '$14.95',
+    image: danDan,
+  },
 ];
 
 export default function Popular() {
   const [isOpen, setIsOpen] = useState(false);
+  const [dish, setDish] = useState('');
+
+  const dishSize = {
+    height: '731px',
+    width: '599px',
+  };
+
+  const handleOpen = (image) => {
+    setDish(image);
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setDish('');
+    setIsOpen(false);
+  };
+
   return (
     <StyledPopular>
       <Grid>
         <Heading>SPECIALS AND POPULAR ITEMS</Heading>
         <Carousel responsive={responsive} centerMode={true} infinite={true}>
-          {images.map((image) => (
-            <Image backgroundImage={image} />
+          {dishes.map((dish) => (
+            <Image
+              backgroundImage={dish.image}
+              onClick={() => handleOpen(dish.image)}
+            />
           ))}
         </Carousel>
       </Grid>
-      {isOpen && <Modal />}
+      {isOpen && (
+        <Modal image={dish} close={handleClose} size={dishSize} isDish={true} />
+      )}
     </StyledPopular>
   );
 }
