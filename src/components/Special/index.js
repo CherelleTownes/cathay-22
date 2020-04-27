@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Modal from '../Modal';
 import special from '../../assets/images/special-events.png';
+import specialMenu from '../../assets/menus/new-year-menu.png';
 
 const StyledSpecial = styled.section`
   height: 627px;
@@ -83,6 +85,23 @@ const Button = styled.button`
 `;
 
 export default function Special() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [menu, setMenu] = useState('');
+
+  const handleOpen = (e) => {
+    setMenu(e.target.name);
+    setIsOpen(!isOpen);
+  };
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const menuSize = {
+    height: '95%',
+    width: '60%',
+  };
+
   return (
     <StyledSpecial id="special">
       <Label>SPECIAL EVENTS</Label>
@@ -104,7 +123,10 @@ export default function Special() {
         <a href="tel:+1-973-467-8688">
           <Button width="175px">CALL US</Button>
         </a>
-        <Button width="204px">CHINESE NEW YEAR MENU '20</Button>
+        <Button width="204px" onClick={(e) => handleOpen(e)} name={specialMenu}>
+          CHINESE NEW YEAR MENU '20
+        </Button>
+        {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
       </ContainerButton>
       <SpecialImg src={special} />
     </StyledSpecial>
