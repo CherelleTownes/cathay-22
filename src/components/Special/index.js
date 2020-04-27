@@ -7,9 +7,18 @@ import specialMenu from '../../assets/menus/new-year-menu.png';
 const StyledSpecial = styled.section`
   height: 627px;
   background-color: #a32e02;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 156px 606px 83px 377px 217px;
+  grid-template-rows: 136px 25px 230px 152px 83px; */
+`;
+
+const Layout = styled.div`
+  display: grid;
+  grid-template-columns: 156px 606px 84px 377px 217px;
   grid-template-rows: 136px 25px 230px 152px 83px;
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const SpecialImg = styled.img`
@@ -30,7 +39,6 @@ const Label = styled.h1`
   letter-spacing: 1.75px;
   color: #ffffff;
   text-align: right;
-  /* padding-bottom: 30px; */
   grid-column: 2;
   grid-row: 1;
   justify-self: end;
@@ -103,32 +111,38 @@ export default function Special() {
   };
 
   return (
-    <StyledSpecial id="special">
-      <Label>SPECIAL EVENTS</Label>
-      <ContainerText>
-        <Text>
-          At Cathay 22, a celebration is always memorable. Custom banquet menus,
-          party room, and catering services are available.
-        </Text>
-        <Text>
-          While dining at Cathay 22, select from our full wine list or enjoy
-          champagne, beer or cocktails from our fully stocked bar.
-        </Text>
-        <Text>
-          Call us to request our Special Events menu. And be sure to check back
-          here for the Special Events that we have throughout the year.
-        </Text>
-      </ContainerText>
-      <ContainerButton>
-        <a href="tel:+1-973-467-8688">
-          <Button width="175px">CALL US</Button>
-        </a>
-        <Button width="204px" onClick={(e) => handleOpen(e)} name={specialMenu}>
-          CHINESE NEW YEAR MENU '20
-        </Button>
-        {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
-      </ContainerButton>
-      <SpecialImg src={special} />
+    <StyledSpecial id="special-events">
+      <Layout>
+        <Label>SPECIAL EVENTS</Label>
+        <ContainerText>
+          <Text>
+            At Cathay 22, a celebration is always memorable. Custom banquet
+            menus, party room, and catering services are available.
+          </Text>
+          <Text>
+            While dining at Cathay 22, select from our full wine list or enjoy
+            champagne, beer or cocktails from our fully stocked bar.
+          </Text>
+          <Text>
+            Call us to request our Special Events menu. And be sure to check
+            back here for the Special Events that we have throughout the year.
+          </Text>
+        </ContainerText>
+        <ContainerButton>
+          <a href="tel:+1-973-467-8688">
+            <Button width="175px">CALL US</Button>
+          </a>
+          <Button
+            width="204px"
+            onClick={(e) => handleOpen(e)}
+            name={specialMenu}
+          >
+            CHINESE NEW YEAR MENU '20
+          </Button>
+          {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
+        </ContainerButton>
+        <SpecialImg src={special} />
+      </Layout>
     </StyledSpecial>
   );
 }

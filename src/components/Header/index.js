@@ -23,8 +23,9 @@ const Layout = styled.div`
 const Logo = styled.img`
   grid-column: 1/2;
   grid-row: 1/3;
-  width: 300px;
-  height: 158px;
+  width: 240px;
+  height: 140px;
+  align-self: center;
 `;
 
 const Nav = styled.nav`

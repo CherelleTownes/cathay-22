@@ -5,13 +5,15 @@ import dining from '../../assets/images/dining-room-cropped.png';
 const StyledCathay = styled.section`
   height: 527px;
   background-color: #a32e02;
+`;
+
+const Layout = styled.div`
   display: grid;
-  grid-template-columns: 668px 76px auto;
+  grid-template-columns: 668px 76px 696;
   grid-template-rows: 96px 102px 180px 149px;
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly; */
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 `;
 
 const DiningImg = styled.img`
@@ -60,24 +62,26 @@ const Text = styled.p`
 export default function Cathay() {
   return (
     <StyledCathay>
-      <DiningImg src={dining} />
+      <Layout>
+        <DiningImg src={dining} />
 
-      <Label>AT CATHAY 22</Label>
-      <ContainerText>
-        <Text>
-          Let Cathay 22 be your place for any festive occasion or party.
-        </Text>
-        <Text>
-          Whether it's the Chinese New Year or other special events, Cathay 22
-          offers special seasonal dishes and lots of friendly staff to serve
-          you.
-        </Text>
-        <Text>
-          Whether you're planning a party for 20 or any intimate gathering for
-          two, Cathay 22 is your choice for savory Sichuan cuisine in a fun and
-          festive atmosphere year round.
-        </Text>
-      </ContainerText>
+        <Label>AT CATHAY 22</Label>
+        <ContainerText>
+          <Text>
+            Let Cathay 22 be your place for any festive occasion or party.
+          </Text>
+          <Text>
+            Whether it's the Chinese New Year or other special events, Cathay 22
+            offers special seasonal dishes and lots of friendly staff to serve
+            you.
+          </Text>
+          <Text>
+            Whether you're planning a party for 20 or any intimate gathering for
+            two, Cathay 22 is your choice for savory Sichuan cuisine in a fun
+            and festive atmosphere year round.
+          </Text>
+        </ContainerText>
+      </Layout>
     </StyledCathay>
   );
 }
