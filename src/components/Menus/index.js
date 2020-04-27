@@ -72,7 +72,7 @@ const MenuImg = styled.img`
   width: 100%;
   height: 100%;
   filter: brightness(45%);
-  border-radius:45px;
+  border-radius: 45px;
   /* opacity: 0.8;
   background-color: #000000; */
 `;
@@ -101,32 +101,24 @@ export default function Menus() {
   };
 
   return (
-    <StyledSection>
+    <StyledSection id="menu">
       <Grid>
         <Label>Menus</Label>
         <MenusContainer>
-          <MenuImgContainer onClick={() => handleOpen("takeOut")}>
-            <MenuImg
-              src={takeOutImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('takeOut')}>
+            <MenuImg src={takeOutImg} />
             <Title>TAKEOUT</Title>
           </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen("lunch")}>
-            <MenuImg
-              src={lunchImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('lunch')}>
+            <MenuImg src={lunchImg} />
             <Title>LUNCH</Title>
           </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen("dineIn")}>
-            <MenuImg
-              src={dineInImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('dineIn')}>
+            <MenuImg src={dineInImg} />
             <Title>DINNER</Title>
           </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen("wineList")}>
-            <MenuImg
-              src={wineListImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('wineList')}>
+            <MenuImg src={wineListImg} />
             <Title>WINE LIST</Title>
           </MenuImgContainer>
         </MenusContainer>
