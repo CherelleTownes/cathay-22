@@ -18,12 +18,24 @@ const Outer = styled.div`
 const Inner = styled.img`
   height: ${(props) => props.size.height};
   width: ${(props) => props.size.width};
+  object-fit: contain;
 `;
 
-export default function Modal({ image, close, size }) {
+const ModalText = styled.p`
+  position: absolute;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 1.31;
+  letter-spacing: 3.25px;
+  color: #ffffff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+`;
+
+export default function Modal({ image, close, size, isDish }) {
   return (
     <Outer onClick={close}>
       <Inner src={image} size={size} />
+      {isDish && <ModalText>Example Text</ModalText>}
     </Outer>
   );
 }
