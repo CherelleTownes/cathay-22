@@ -7,6 +7,7 @@ const StyledHeader = styled.header`
   height: 169px;
   position: fixed;
   width: 100%;
+  z-index: 1000;
 `;
 
 const Nav = styled.nav`
