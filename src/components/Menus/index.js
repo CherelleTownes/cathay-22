@@ -42,13 +42,26 @@ const Label = styled.h1`
   justify-self: center;
 `;
 
+const Title = styled.p`
+  font-size: 25px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.25px;
+  color: #ffffff;
+`;
+
 const MenuImgContainer = styled.div`
   position: relative;
   width: 290.1px;
   height: 341.4px;
-  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* filter: brightness(50%); */
+  /* background: rgba(0, 0, 0, 0.6); */
   z-index: 50;
-  /* background-color: #333333; */
 `;
 
 const MenuImg = styled.img`
@@ -58,7 +71,9 @@ const MenuImg = styled.img`
   z-index: -100;
   width: 100%;
   height: 100%;
-  /* background-color: #333333; */
+  filter: brightness(45%);
+  /* opacity: 0.8;
+  background-color: #000000; */
 `;
 
 export default function Menus() {
@@ -75,8 +90,8 @@ export default function Menus() {
     width: '60%',
   };
 
-  const handleOpen = (e) => {
-    setMenu(menus[e.target.name]);
+  const handleOpen = (menu) => {
+    setMenu(menus[menu]);
     setIsOpen(!isOpen);
   };
 
@@ -89,33 +104,29 @@ export default function Menus() {
       <Grid>
         <Label>Menus</Label>
         <MenusContainer>
-          <MenuImgContainer>
+          <MenuImgContainer onClick={() => handleOpen("takeOut")}>
             <MenuImg
               src={takeOutImg}
-              onClick={(e) => handleOpen(e)}
-              name="takeOut"
             />
+            <Title>TAKEOUT</Title>
           </MenuImgContainer>
-          <MenuImgContainer>
+          <MenuImgContainer onClick={() => handleOpen("lunch")}>
             <MenuImg
               src={lunchImg}
-              onClick={(e) => handleOpen(e)}
-              name="lunch"
             />
+            <Title>LUNCH</Title>
           </MenuImgContainer>
-          <MenuImgContainer>
+          <MenuImgContainer onClick={() => handleOpen("dineIn")}>
             <MenuImg
               src={dineInImg}
-              onClick={(e) => handleOpen(e)}
-              name="dineIn"
             />
+            <Title>DINNER</Title>
           </MenuImgContainer>
-          <MenuImgContainer>
+          <MenuImgContainer onClick={() => handleOpen("wineList")}>
             <MenuImg
               src={wineListImg}
-              onClick={(e) => handleOpen(e)}
-              name="wineList"
             />
+            <Title>WINE LIST</Title>
           </MenuImgContainer>
         </MenusContainer>
       </Grid>
