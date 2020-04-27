@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import hero from '../../assets/images/hero.png';
 
 const StyledHero = styled.section`
-  background: url(${hero}) rgba(0,0,0,0.3);
+background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${hero});
   height: 771px;
   background-size: cover;
   display:flex;
