@@ -5,21 +5,23 @@ import dining from '../../assets/images/dining-room-cropped.png';
 const StyledCathay = styled.section`
   height: 527px;
   background-color: #a32e02;
-  display: flex;
+  display: grid;
+  grid-template-columns: 668px 76px auto;
+  grid-template-rows: 96px 102px 180px 149px;
+  /* display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
 `;
 
 const DiningImg = styled.img`
   width: 506 px;
   height: 432px;
   border-radius: 15px;
-`;
-
-const ContainerText = styled.div`
-  width: 545px;
-  height: 300px;
+  grid-column: 1 / span 1;
+  grid-row: 1 / 5;
+  justify-self: end;
+  align-self: center;
 `;
 
 const Label = styled.h1`
@@ -31,6 +33,16 @@ const Label = styled.h1`
   letter-spacing: 1.75px;
   color: #ffffff;
   padding: 0 0 50px 0;
+  grid-column: 3;
+  grid-row: 2;
+  align-self: flex-end;
+`;
+
+const ContainerText = styled.div`
+  width: 545px;
+  height: 300px;
+  grid-column: 3;
+  grid-row: 3;
 `;
 
 const Text = styled.p`
@@ -50,8 +62,8 @@ export default function Cathay() {
     <StyledCathay>
       <DiningImg src={dining} />
 
+      <Label>AT CATHAY 22</Label>
       <ContainerText>
-        <Label>AT CATHAY 22</Label>
         <Text>
           Let Cathay 22 be your place for any festive occasion or party.
         </Text>
