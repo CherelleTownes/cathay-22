@@ -103,7 +103,6 @@ const ContainerButton = styled.div`
     height: 30px;
     grid-row: 5;
     justify-content: space-between;
-  
   }
 `;
 
@@ -121,7 +120,6 @@ const Button = styled.button`
   letter-spacing: 0.9px;
   color: #000000;
   @media (max-width: 375px) {
-    /* width: ${(props) => props.width - 93}px; */
     height: 21px;
     font-size: 8px;
     line-height: normal;
@@ -172,16 +170,13 @@ export default function Special() {
           <a href="tel:+1-973-467-8688">
             <Button width={buttonWidthCall}>CALL US</Button>
           </a>
-          {/* {!isMobile && ( */}
           <Button
-            // width="204"
             width={buttonWidthMenu}
             onClick={(e) => handleOpen(e)}
             name={specialMenu}
           >
             CHINESE NEW YEAR MENU '20
           </Button>
-          {/* )} */}
           {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
         </ContainerButton>
         <SpecialImg src={special} />
