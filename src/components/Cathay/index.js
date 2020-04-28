@@ -19,8 +19,8 @@ const Layout = styled.div`
   margin: 0 auto;
 
   @media (max-width: 375px) {
-    grid-template-columns: 45% 3% 52%;
-    grid-template-rows: 12% 18% 55% 15%;
+    grid-template-columns: 44% 2.5% 53.5%;
+    grid-template-rows: 11% 17% 57% 15%;
     max-width: 375px;
   }
 `;
@@ -38,7 +38,6 @@ const DiningImg = styled.img`
     height: 138px;
     border-radius: 15px;
   }
-  
 `;
 
 const Label = styled.h1`
@@ -56,17 +55,15 @@ const Label = styled.h1`
   @media (max-width: 375px) {
     font-size: 13px;
     letter-spacing: 0.65px;
-    padding-bottom: 15px;
+    padding-bottom: 13px;
   }
 `;
 
 const ContainerText = styled.div`
-  width: 545px;
-  height: 300px;
   grid-column: 3;
   grid-row: 3;
   @media (max-width: 375px) {
-    width: 187px;
+    width: 190px;
     height: 110px;
   }
 `;
