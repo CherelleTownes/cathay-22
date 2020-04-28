@@ -1,27 +1,25 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf';
 
-class PDF extends Component {
-  state = {
-    numPages: null,
-    pageNumber: 1,
-  }
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
-  }
-  render() {
-    const { pageNumber, numPages } = this.state;
-    return (
-      <div>
-        <Document
-          file="../../assets/menus/Luncheon_Menu.pdf"
-          onLoadSuccess={this.onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-        <p>Page {pageNumber} of {numPages}</p>
-      </div>
-    );
-  }
+export default function PDF() {
+  const [numPages, setNumPages] = useState(null);
+  const [pageNum, setPageNum] = useState(1);
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
+
+  return (
+    <div>
+      <Document
+        file="../../assets/menus/Luncheon_Menu.pdf"
+        onLoadSuccess={() => onDocumentLoadSuccess()}
+      >
+        <Page pageNumber={pageNum} />
+      </Document>
+      <p>
+        Page {pageNum} of {numPages}
+      </p>
+    </div>
+  );
 }
-  export default PDF;
