@@ -123,7 +123,7 @@ export default function About() {
                 luncheon will always be enjoyable.
               </Text>
               <ContainerLink>
-                <Link width="130px">CLOSED</Link>)
+                <Link width="130px">CLOSED</Link>
                 <LinkImg src={close_arrow} onClick={(e) => handleOpen(e)} />
               </ContainerLink>
             </>
