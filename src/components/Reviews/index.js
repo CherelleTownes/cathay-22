@@ -57,13 +57,14 @@ const TopText = styled.p`
   line-height: normal;
   letter-spacing: 0.85px;
   color: #ffffff;
-  margin-left: 7px;
+  margin-left: 50px;
 `;
 
 const Vector = styled.hr`
-  width: 320px;
+  width: 298px;
   height: 1px;
   border: solid 2px #ea3a3a;
+  margin-right: -22px;
 `;
 
 const BottomText = styled.p`
@@ -78,6 +79,7 @@ const BottomText = styled.p`
   line-height: normal;
   letter-spacing: 0.85px;
   color: #ffffff;
+  padding-left: 50px;
 `;
 
 
@@ -128,16 +130,27 @@ export default function Reviews() {
       <Grid>
       <Label>Our Reviews</Label>
         <ReviewContainer>
+          
+
+        <a href="https://www.tripadvisor.com/Restaurant_Review-g46842-d541995-Reviews-Cathay_22-Springfield_New_Jersey.html"
+            target="_blank"
+            rel="noopener noreferrer">
           <ReviewImgContainer>
             <ReviewsImg src={reviewImg1} />
-            <RecommendationContainer>
+            <RecommendationContainer href= "https://www.yelp.com/biz/cathay-22-springfield">
             <TopText>Love It</TopText>
             <Vector />
             <BottomText>Haven't been here for awhile, the food and service is still great. The spicy wontons and cold chengdu noodles are tasty as hell, as is the sea dragon, a whole sea bass in a sweet and spicy sauce....
              </BottomText>
             </RecommendationContainer>
             <Recommendation src={recommendationImg1} />
-          </ReviewImgContainer>
+            </ReviewImgContainer>
+            </a>
+
+
+            <a href="https://www.yelp.com/biz/cathay-22-springfield"
+            target="_blank"
+            rel="noopener noreferrer">
           <ReviewImgContainer>
             <ReviewsImg src={reviewImg2} />
             <RecommendationContainer>
@@ -146,8 +159,14 @@ export default function Reviews() {
             <BottomText>Always good food and great service.Enjoy the various fish dishes and when we want to go "American Style" they have a nice pupu!
              </BottomText>
             </RecommendationContainer>
-            <Recommendation src={recommendationImg2} />
+              <Recommendation src={recommendationImg2} />
           </ReviewImgContainer>
+          </a>
+
+
+          <a href="https://www.tripadvisor.com/Restaurant_Review-g46842-d541995-Reviews-Cathay_22-Springfield_New_Jersey.html"
+            target="_blank"
+            rel="noopener noreferrer">
           <ReviewImgContainer>
             <ReviewsImg src={reviewImg3} />
             <RecommendationContainer>
@@ -157,7 +176,10 @@ export default function Reviews() {
              </BottomText>
               </RecommendationContainer>
               <Recommendation src={recommendationImg1} />
-          </ReviewImgContainer>
+            </ReviewImgContainer>
+            </a>
+
+
         </ReviewContainer>
       </Grid>
     </StyledReviews>
