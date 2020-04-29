@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import Modal from '../Modal';
 
 import takeOutImg from '../../assets/images/trip-advisor-review-1.png';
-import lunchImg from '../../assets/images/yelp-review.png';
-import dineInImg from '../../assets/images/trip-advisor-review-2.png';
-import wineListImg from '../../assets/images/trip-advisor-review-2.png';
+import lunchImg from '../../assets/images/menuDish/lunch-cropped.jpeg';
+import dineInImg from '../../assets/images/menuDish/dinner.jpg';
+import wineListImg from '../../assets/images/menuDish/winelist-cropped.jpg';
 
 import takeOutMenu from '../../assets/menus/takeout-menu2.png';
 import lunchMenu from '../../assets/menus/lunch-menu2.png';
@@ -72,6 +72,7 @@ const MenuImg = styled.img`
   width: 100%;
   height: 100%;
   filter: brightness(45%);
+  border-radius: 45px;
   /* opacity: 0.8;
   background-color: #000000; */
 `;
@@ -100,32 +101,24 @@ export default function Menus() {
   };
 
   return (
-    <StyledSection>
+    <StyledSection id="menu">
       <Grid>
         <Label>Menus</Label>
         <MenusContainer>
-          <MenuImgContainer onClick={() => handleOpen("takeOut")}>
-            <MenuImg
-              src={takeOutImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('takeOut')}>
+            <MenuImg src={takeOutImg} />
             <Title>TAKEOUT</Title>
           </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen("lunch")}>
-            <MenuImg
-              src={lunchImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('lunch')}>
+            <MenuImg src={lunchImg} />
             <Title>LUNCH</Title>
           </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen("dineIn")}>
-            <MenuImg
-              src={dineInImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('dineIn')}>
+            <MenuImg src={dineInImg} />
             <Title>DINNER</Title>
           </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen("wineList")}>
-            <MenuImg
-              src={wineListImg}
-            />
+          <MenuImgContainer onClick={() => handleOpen('wineList')}>
+            <MenuImg src={wineListImg} />
             <Title>WINE LIST</Title>
           </MenuImgContainer>
         </MenusContainer>

@@ -3,7 +3,6 @@ import reset from 'styled-reset';
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,700i&display=swap');
   :root {
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;

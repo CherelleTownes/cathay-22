@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import logo from '../../assets/images/cathay22_logo.png';
 
 const StyledHeader = styled.header`
-  display: flex;
   background-color: #a32e02;
   height: 169px;
   position: fixed;
@@ -10,9 +10,30 @@ const StyledHeader = styled.header`
   z-index: 1000;
 `;
 
+const Layout = styled.div`
+  display: grid;
+  grid-template-columns: 252px 1117px;
+  grid-template-rows: 1fr 1fr;
+  grid-column-gap: 51px;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 100%;
+`;
+
+const Logo = styled.img`
+  grid-column: 1/2;
+  grid-row: 1/3;
+  width: 240px;
+  height: 140px;
+  align-self: center;
+`;
+
 const Nav = styled.nav`
+  grid-column: 2/3;
+  grid-row: 2/3;
   display: flex;
   justify-content: space-between;
+  align-items:center;
 
 `;
 
@@ -28,6 +49,10 @@ const Link = styled.a`
 `;
 
 const Contact = styled.p`
+  grid-column: 2/3;
+  grid-row: 1/2;
+  justify-self: end;
+  align-self:center;
   font-size: 18px;
   font-weight: 500;
   font-stretch: normal;
@@ -39,14 +64,17 @@ const Contact = styled.p`
 
 export default function Header() {
   return <StyledHeader>
+    <Layout>
+      <Logo src={logo} />
     <Contact>
       TEL: 973-467-8688 • 124 Rt. 22 West Springfield, NJ 07081
     </Contact>
     <Nav>
-      <Link href="#about">About</Link>
-      <Link href="#menu">Menu</Link>
-      <Link href="#special-events">Special Events</Link>
-      <Link href="#directions">Directions</Link>
+      <Link href="#about">ABOUT</Link>
+      <Link href="#menu">MENU</Link>
+      <Link href="#special-events">SPECIAL EVENTS</Link>
+      <Link href="#directions">DIRECTIONS</Link>
     </Nav>
+    </Layout>
     </StyledHeader>
 }
