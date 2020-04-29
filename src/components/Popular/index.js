@@ -6,6 +6,8 @@ import 'react-multi-carousel/lib/styles.css';
 import Modal from '../Modal';
 import DishImage from './DishImage';
 import dishes from './dishes';
+import leftArrow from '../../assets/images/arrows/carousel-arrow-left.png';
+import rightArrow from '../../assets/images/arrows/carousel-arrow-right.png';
 
 const StyledPopular = styled.section`
   height: 684px;
