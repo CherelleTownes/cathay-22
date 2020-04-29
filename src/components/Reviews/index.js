@@ -1,13 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import reviewImg1 from '../../assets/images/trip-advisor-review-1.png';
-// import reviewImg2 from '../../assets/images/yelp-review.png';
-// import reviewImg3 from '../../assets/images/trip-advisor-review-2.png';
-
-import reviewImg1 from '../../assets/images/menuDish/dinner.jpg';
-import reviewImg2 from '../../assets/images/menuDish/dinner.jpg';
-import reviewImg3 from '../../assets/images/menuDish/dinner.jpg';
+import reviewImg1 from '../../assets/images/trip-advisor-review-1.png';
+import reviewImg2 from '../../assets/images/yelp-review.png';
+import reviewImg3 from '../../assets/images/trip-advisor-review-2.png';
 
 import recommendationImg1 from '../../assets/images/tripadvisor.png';
 import recommendationImg2 from '../../assets/images/yelp.png';
@@ -30,6 +26,9 @@ const Grid = styled.div`
 const ReviewContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  a:link {
+  text-decoration: none;
+}
 `;
 
 const Label = styled.h1`
@@ -41,6 +40,7 @@ const Label = styled.h1`
   letter-spacing: 1.75px;
   color: #000000;
   justify-self: center;
+  text-transform: uppercase;
 `;
 
 const TopText = styled.p`
@@ -58,6 +58,7 @@ const TopText = styled.p`
   letter-spacing: 0.85px;
   color: #ffffff;
   margin-left: 50px;
+  text-transform: uppercase;
 `;
 
 const Vector = styled.hr`
@@ -80,13 +81,13 @@ const BottomText = styled.p`
   letter-spacing: 0.85px;
   color: #ffffff;
   padding-left: 50px;
+  text-transform: uppercase;
 `;
 
 
 const ReviewImgContainer = styled.div`
   position: relative;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   z-index: 50;
   width: 428px;
@@ -98,7 +99,7 @@ const ReviewsImg = styled.img`
   width: 100%;
   height: 100%;
   border-radius: 51px;
-  filter: brightness(50%);
+  filter: brightness(80%);
   position: absolute;
   top: 0;
   left: 0;
@@ -110,7 +111,6 @@ const RecommendationContainer = styled.div`
     flex-direction: column;
     align-self: flex-start;
     padding-top: 50px;
-    /* padding-left: 20px; */
     margin:0 auto;
 `;
 
@@ -130,14 +130,14 @@ export default function Reviews() {
       <Grid>
       <Label>Our Reviews</Label>
         <ReviewContainer>
-          
+
 
         <a href="https://www.tripadvisor.com/Restaurant_Review-g46842-d541995-Reviews-Cathay_22-Springfield_New_Jersey.html"
             target="_blank"
             rel="noopener noreferrer">
           <ReviewImgContainer>
             <ReviewsImg src={reviewImg1} />
-            <RecommendationContainer href= "https://www.yelp.com/biz/cathay-22-springfield">
+            <RecommendationContainer>
             <TopText>Love It</TopText>
             <Vector />
             <BottomText>Haven't been here for awhile, the food and service is still great. The spicy wontons and cold chengdu noodles are tasty as hell, as is the sea dragon, a whole sea bass in a sweet and spicy sauce....
@@ -156,7 +156,7 @@ export default function Reviews() {
             <RecommendationContainer>
             <TopText>Been going here for years.</TopText>
             <Vector />
-            <BottomText>Always good food and great service.Enjoy the various fish dishes and when we want to go "American Style" they have a nice pupu!
+            <BottomText>Always good food and great service. Enjoy the various fish dishes and when we want to go "American Style" they have a nice pupu!
              </BottomText>
             </RecommendationContainer>
               <Recommendation src={recommendationImg2} />
