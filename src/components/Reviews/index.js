@@ -5,10 +5,6 @@ import reviewImg1 from '../../assets/images/trip-advisor-review-1.png';
 import reviewImg2 from '../../assets/images/yelp-review.png';
 import reviewImg3 from '../../assets/images/trip-advisor-review-2.png';
 
-// import reviewImg1 from '../../assets/images/menuDish/dinner.jpg';
-// import reviewImg2 from '../../assets/images/menuDish/dinner.jpg';
-// import reviewImg3 from '../../assets/images/menuDish/dinner.jpg';
-
 import recommendationImg1 from '../../assets/images/tripadvisor.png';
 import recommendationImg2 from '../../assets/images/yelp.png';
 
@@ -86,14 +82,12 @@ const BottomText = styled.p`
   color: #ffffff;
   padding-left: 50px;
   text-transform: uppercase;
-  /* text-decoration: none; */
 `;
 
 
 const ReviewImgContainer = styled.div`
   position: relative;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   z-index: 50;
   width: 428px;
@@ -117,7 +111,6 @@ const RecommendationContainer = styled.div`
     flex-direction: column;
     align-self: flex-start;
     padding-top: 50px;
-    /* padding-left: 20px; */
     margin:0 auto;
 `;
 
