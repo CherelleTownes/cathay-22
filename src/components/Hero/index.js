@@ -3,14 +3,15 @@ import styled from 'styled-components';
 import hero from '../../assets/images/hero.png';
 
 const StyledHero = styled.section`
-background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${hero});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${hero});
   height: 771px;
   background-size: cover;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content:center;
-  `;
+  justify-content: center;
+`;
 
 const Label = styled.h1`
   font-size: 55px;
@@ -22,6 +23,7 @@ const Label = styled.h1`
   color: #ffffff;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 55px;
+  padding-top: 169px;
 `;
 
 const Button = styled.button`
@@ -40,10 +42,12 @@ const Button = styled.button`
 `;
 
 export default function Hero() {
-  return <StyledHero>
-    <Label>TRADITION, PASSION AND INNOVATION</Label>
-    <a href="#about">
-    <Button>LEARN MORE</Button>
-    </a> 
-  </StyledHero>
+  return (
+    <StyledHero>
+      <Label>TRADITION, PASSION AND INNOVATION</Label>
+      <a href="#about">
+        <Button>LEARN MORE</Button>
+      </a>
+    </StyledHero>
+  );
 }
