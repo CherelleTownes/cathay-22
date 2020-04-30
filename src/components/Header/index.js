@@ -8,6 +8,7 @@ const StyledHeader = styled.header`
   position: fixed;
   width: 100%;
   z-index: 1000;
+  top: 0;
 `;
 
 const Layout = styled.div`
