@@ -12,12 +12,13 @@ const StyledHeader = styled.header`
 
 const Layout = styled.div`
   display: grid;
-  grid-template-columns: 252px 1117px;
+  grid-template-columns: 252px 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-column-gap: 51px;
-  max-width: 1440px;
-  margin: 0 auto;
+  grid-column-gap: 56px;
   height: 100%;
+  max-width: 1440px;
+  padding: 0 126px 0 122px;
+  margin: 0 auto;
 `;
 
 const Logo = styled.img`
@@ -33,15 +34,12 @@ const Nav = styled.nav`
   grid-row: 2/3;
   display: flex;
   justify-content: space-between;
-  align-items:center;
-
+  align-items: center;
 `;
 
 const Link = styled.a`
   font-size: 28px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.33;
   letter-spacing: 3.92px;
   color: #ffffff;
@@ -52,29 +50,28 @@ const Contact = styled.p`
   grid-column: 2/3;
   grid-row: 1/2;
   justify-self: end;
-  align-self:center;
+  align-self: center;
   font-size: 18px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 1.44px;
   color: #ffffff;
 `;
 
 export default function Header() {
-  return <StyledHeader>
-    <Layout>
-      <Logo src={logo} />
-    <Contact>
-      TEL: 973-467-8688 • 124 Rt. 22 West Springfield, NJ 07081
-    </Contact>
-    <Nav>
-      <Link href="#about">ABOUT</Link>
-      <Link href="#menu">MENU</Link>
-      <Link href="#special-events">SPECIAL EVENTS</Link>
-      <Link href="#directions">DIRECTIONS</Link>
-    </Nav>
-    </Layout>
+  return (
+    <StyledHeader>
+      <Layout>
+        <Logo src={logo} />
+        <Contact>
+          TEL: 973-467-8688 • 124 Rt. 22 West Springfield, NJ 07081
+        </Contact>
+        <Nav>
+          <Link href="#about">ABOUT</Link>
+          <Link href="#menu">MENU</Link>
+          <Link href="#special-events">SPECIAL EVENTS</Link>
+          <Link href="#directions">DIRECTIONS</Link>
+        </Nav>
+      </Layout>
     </StyledHeader>
+  );
 }
