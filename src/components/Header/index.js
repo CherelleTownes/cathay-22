@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import * as Scroll from 'react-scroll';
 import logo from '../../assets/images/cathay22_logo.png';
 
 const StyledHeader = styled.header`
@@ -27,6 +28,7 @@ const Logo = styled.img`
   width: 240px;
   height: 140px;
   align-self: center;
+  cursor: pointer;
 `;
 
 const Nav = styled.nav`
@@ -37,13 +39,14 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-const Link = styled.a`
+const Link = styled(Scroll.Link)`
   font-size: 28px;
   font-weight: bold;
   line-height: 1.33;
   letter-spacing: 3.92px;
   color: #ffffff;
   text-decoration: none;
+  cursor: pointer;
 `;
 
 const Contact = styled.p`
@@ -61,15 +64,41 @@ export default function Header() {
   return (
     <StyledHeader>
       <Layout>
-        <Logo src={logo} />
+        <Logo src={logo} onClick={Scroll.animateScroll.scrollToTop} />
         <Contact>
           TEL: 973-467-8688 • 124 Rt. 22 West Springfield, NJ 07081
         </Contact>
         <Nav>
-          <Link href="#about">ABOUT</Link>
-          <Link href="#menu">MENU</Link>
-          <Link href="#special-events">SPECIAL EVENTS</Link>
-          <Link href="#directions">DIRECTIONS</Link>
+          <Link
+            to="about"
+            spy={true}
+            smooth={true}
+            offset={-165}
+            duration={700}
+          >
+            ABOUT
+          </Link>
+          <Link to="menu" spy={true} smooth={true} offset={-160} duration={500}>
+            MENU
+          </Link>
+          <Link
+            to="special-events"
+            spy={true}
+            smooth={true}
+            offset={-165}
+            duration={500}
+          >
+            SPECIAL EVENTS
+          </Link>
+          <Link
+            to="directions"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={700}
+          >
+            DIRECTIONS
+          </Link>
         </Nav>
       </Layout>
     </StyledHeader>

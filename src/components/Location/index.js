@@ -116,7 +116,7 @@ const ResText = styled.p`
 
 export default function Location() {
   return (
-    <StyledSection id="directions">
+    <StyledSection id="directions" name="directions">
       <Grid>
         <TextBox>
           <Heading>OUR LOCATION</Heading>
