@@ -101,7 +101,7 @@ export default function Menus() {
   };
 
   return (
-    <StyledSection id="menu">
+    <StyledSection id="menu" name="menu">
       <Grid>
         <Label>Menus</Label>
         <MenusContainer>
