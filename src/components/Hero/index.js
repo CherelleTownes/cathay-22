@@ -4,7 +4,10 @@ import { useMediaQuery } from 'react-responsive';
 import hero_desktop from '../../assets/images/hero.png';
 import hero_small from '../../assets/images/hero-small.png';
 import { Link } from 'react-scroll';
-import hero from '../../assets/images/hero.png';
+
+const size = {
+  mobile: '414px'
+}
 
 const StyledHero = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -16,10 +19,9 @@ const StyledHero = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 248px; 
     margin-top: 105px;
-  
   }
 `;
 
@@ -31,7 +33,7 @@ const Label = styled.h2`
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 55px;
   padding-top: 169px;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     font-size: 15px;
     letter-spacing: 2px;
     padding-top: 30px;
@@ -49,7 +51,8 @@ const Button = styled.button`
   line-height: 1.33;
   letter-spacing: 2.79px;
   color: #000000;
-  @media (max-width: 375px) {
+  font-family: Roboto; 
+  @media (max-width: ${size.mobile}) {
     width: 104px;
     height: 26px;
     font-size: 11px;

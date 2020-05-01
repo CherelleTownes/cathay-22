@@ -5,10 +5,14 @@ import { useMediaQuery } from 'react-responsive';
 import special from '../../assets/images/special-events.png';
 import specialMenu from '../../assets/menus/new-year-menu.png';
 
+const size = {
+  mobile: '414px',
+};
+
 const StyledSpecial = styled.section`
   height: 627px;
   background-color: #a32e02;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 207px;
   }
 `;
@@ -22,7 +26,7 @@ const Layout = styled.div`
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     max-width: 375px;
     grid-template-columns: 8% 54% 4% 28% 6%;
     grid-template-rows: 21% 6% 26% 20% 27%;
@@ -35,7 +39,7 @@ const SpecialImg = styled.img`
   border-radius: 15px;
   grid-area: 1 / col4-start / last-line / 4;
   align-self: center;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     width: 107px;
     height: 156px;
     border-radius: 15px;
@@ -56,7 +60,7 @@ const Label = styled.h1`
   grid-row: 1;
   justify-self: end;
   align-self: end;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     font-size: 13px;
     letter-spacing: 0.65px;
   }
@@ -79,7 +83,7 @@ const Text = styled.p`
   color: #ffffff;
   padding-bottom: 20px;
   text-align: right;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     font-size: 8px;
     line-height: 1;
     letter-spacing: 0.24px;
@@ -98,7 +102,7 @@ const ContainerButton = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-end;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     width: 195px;
     height: 30px;
     grid-row: 5;
@@ -119,7 +123,8 @@ const Button = styled.button`
   line-height: normal;
   letter-spacing: 0.9px;
   color: #000000;
-  @media (max-width: 375px) {
+  font-family: Roboto;
+  @media (max-width: ${size.mobile}) {
     height: 21px;
     font-size: 8px;
     line-height: normal;

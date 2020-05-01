@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import dining from '../../assets/images/dining-room-cropped.png';
 
+const size = {
+  mobile: '414px'
+}
+
 const StyledCathay = styled.section`
   height: 527px;
   background-color: #a32e02;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 171px;
   }
 `;
@@ -18,7 +22,7 @@ const Layout = styled.div`
   max-width: 1440px;
   margin: 0 auto;
 
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     grid-template-columns: 44% 2.5% 53.5%;
     grid-template-rows: 11% 17% 57% 15%;
     max-width: 375px;
@@ -33,7 +37,7 @@ const DiningImg = styled.img`
   grid-row: 1 / 5;
   justify-self: end;
   align-self: center;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     width: 155px;
     height: 138px;
     border-radius: 15px;
@@ -52,7 +56,7 @@ const Label = styled.h1`
   grid-column: 3;
   grid-row: 2;
   align-self: flex-end;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     font-size: 13px;
     letter-spacing: 0.65px;
     padding-bottom: 13px;
@@ -62,7 +66,7 @@ const Label = styled.h1`
 const ContainerText = styled.div`
   grid-column: 3;
   grid-row: 3;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     width: 190px;
     height: 110px;
   }
@@ -78,7 +82,7 @@ const Text = styled.p`
   letter-spacing: normal;
   color: #ffffff;
   padding-bottom: 20px;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     font-size: 8px;
     line-height: 1;
     letter-spacing: 0.24px;

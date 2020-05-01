@@ -4,13 +4,17 @@ import about from '../../assets/images/about-us-background.jpg';
 import open_arrow from '../../assets/images/arrows/about-arrow-down.png';
 import close_arrow from '../../assets/images/arrows/about-arrow-up.png';
 
+const size = {
+  mobile: '414px'
+}
+
 const StyledAbout = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${about});
 
   height: 710px;
   background-size: cover;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     width: 375px;
     height: 230px;
   }
@@ -25,7 +29,7 @@ const Layout = styled.div`
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     grid-template-columns: 4% 92% 4%;
   }
 `;
@@ -43,7 +47,7 @@ const Label = styled.h1`
   grid-column: 2;
   grid-row: 1;
   align-self: flex-end;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 18px;
     font-size: 15px;
     letter-spacing: 1.75px;
@@ -54,7 +58,7 @@ const ContainerText = styled.div`
   height: 228px;
   grid-column: 2;
   grid-row: 3;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 131px;
   }
 `;
@@ -69,7 +73,7 @@ const Text = styled.p`
   color: #ffffff;
   padding-bottom: 30px;
   text-align: center;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     font-size: 8px;
     letter-spacing: 0.16px;
     padding-bottom: 10px;
@@ -83,7 +87,7 @@ const ContainerLink = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 12px;
   }
 `;
@@ -99,7 +103,7 @@ const Link = styled.h2`
   color: #ffffff;
   padding-right: 10px;
 
-  @media (max-width: 375px) {
+  @media (max-width: ${size.mobile}) {
     height: 13px;
     font-size: 12px;
     letter-spacing: 1.86px;
@@ -110,7 +114,10 @@ const LinkImg = styled.img`
   width: 43px;
   height: 35px;
   border-radius: 5px;
-  @media (max-width: 375px) {
+  &:hover {
+    cursor: pointer;
+  }
+  @media (max-width: ${size.mobile}) {
     width: 12px;
     height: 10px;
     border-radius: 1px;
