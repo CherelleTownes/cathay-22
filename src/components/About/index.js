@@ -98,12 +98,12 @@ const Link = styled.h2`
   letter-spacing: 3.88px;
   color: #ffffff;
   padding-right: 10px;
-  
+
   @media (max-width: 375px) {
     height: 13px;
     font-size: 12px;
     letter-spacing: 1.86px;
-}
+  }
 `;
 
 const LinkImg = styled.img`
@@ -112,9 +112,8 @@ const LinkImg = styled.img`
   border-radius: 5px;
   @media (max-width: 375px) {
     width: 12px;
-  height: 10px;
-  border-radius: 1px;
-
+    height: 10px;
+    border-radius: 1px;
   }
 `;
 
@@ -126,7 +125,7 @@ export default function About() {
   };
 
   return (
-    <StyledAbout id="about">
+    <StyledAbout id="about" name="about">
       <Layout>
         <Label>ABOUT US</Label>
         <ContainerText>
