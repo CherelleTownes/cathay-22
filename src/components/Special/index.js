@@ -149,7 +149,7 @@ export default function Special() {
   const buttonWidthMenu = isMobile ? 111 : 204;
 
   return (
-    <StyledSpecial id="special-events">
+    <StyledSpecial id="special-events" name="special-events">
       <Layout>
         <Label>SPECIAL EVENTS</Label>
         <ContainerText>
