@@ -7,6 +7,10 @@ import specialMenu from '../../assets/menus/new-year-menu.png';
 
 const size = {
   mobile: '414px',
+  tablet: '768px',
+  tablet_max: '1024px',
+  max_mid: '1110px',
+  max_large: '1280px',
 };
 
 const StyledSpecial = styled.section`
@@ -39,6 +43,10 @@ const SpecialImg = styled.img`
   border-radius: 15px;
   grid-area: 1 / col4-start / last-line / 4;
   align-self: center;
+  @media (max-width: ${size.tablet_max}) {
+   /* width: 339px;
+   height: 442px; */
+  }
   @media (max-width: ${size.mobile}) {
     width: 107px;
     height: 156px;
@@ -60,6 +68,15 @@ const Label = styled.h1`
   grid-row: 1;
   justify-self: end;
   align-self: end;
+  @media (max-width: ${size.max_large}) {
+    font-size: 33px;
+  }
+  @media (max-width: ${size.max_mid}) {
+    font-size: 30px;
+  }
+  @media (max-width: ${size.tablet.max}) {
+    font-size: 28px;
+  }
   @media (max-width: ${size.mobile}) {
     font-size: 13px;
     letter-spacing: 0.65px;
@@ -83,6 +100,15 @@ const Text = styled.p`
   color: #ffffff;
   padding-bottom: 20px;
   text-align: right;
+
+  @media (max-width: ${size.max_large}) {
+    font-size: 16px;
+  }
+  @media (max-width: ${size.max_mid}) {
+    font-size: 15px;
+  }
+  @media (max-width: ${size.tablet.max}) {
+    font-size: 14px;
   @media (max-width: ${size.mobile}) {
     font-size: 8px;
     line-height: 1;
@@ -102,6 +128,16 @@ const ContainerButton = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: flex-end;
+
+  @media (max-width: ${size.max_large}) {
+    width: 560px;
+  }
+  @media (max-width: ${size.max_mid}) {
+    width: 500px;
+  }
+  @media (max-width: ${size.tablet_max}) {
+    width: 450px;
+  }
   @media (max-width: ${size.mobile}) {
     width: 195px;
     height: 30px;
@@ -124,6 +160,10 @@ const Button = styled.button`
   letter-spacing: 0.9px;
   color: #000000;
   font-family: Roboto;
+  @media (max-width: ${size.tablet_max}) {
+    width: ${(props) => props.width-25}px;
+    font-size: 15px;
+  }
   @media (max-width: ${size.mobile}) {
     height: 21px;
     font-size: 8px;

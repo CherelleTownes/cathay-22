@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import dining from '../../assets/images/dining-room-cropped.png';
 
 const size = {
-  mobile: '414px'
-}
+  mobile: '414px',
+  tablet: '768px',
+  tablet_max: '1024px',
+  max_mid: '1110px',
+  max_large: '1280px',
+};
 
 const StyledCathay = styled.section`
   height: 527px;
@@ -25,7 +29,6 @@ const Layout = styled.div`
   @media (max-width: ${size.mobile}) {
     grid-template-columns: 44% 2.5% 53.5%;
     grid-template-rows: 11% 17% 57% 15%;
-    max-width: 375px;
   }
 `;
 
@@ -56,6 +59,15 @@ const Label = styled.h1`
   grid-column: 3;
   grid-row: 2;
   align-self: flex-end;
+  @media (max-width: ${size.max_large}) {
+    font-size: 33px;
+  }
+  @media (max-width: ${size.max_mid}) {
+    font-size: 30px;
+  }
+  @media (max-width: ${size.tablet.max}) {
+    font-size: 28px;
+  }
   @media (max-width: ${size.mobile}) {
     font-size: 13px;
     letter-spacing: 0.65px;
@@ -82,6 +94,15 @@ const Text = styled.p`
   letter-spacing: normal;
   color: #ffffff;
   padding-bottom: 20px;
+  @media (max-width: ${size.max_large}) {
+    font-size: 16px;
+  }
+  @media (max-width: ${size.max_mid}) {
+    font-size: 15px;
+  }
+  @media (max-width: ${size.tablet.max}) {
+    font-size: 14px;
+  }
   @media (max-width: ${size.mobile}) {
     font-size: 8px;
     line-height: 1;

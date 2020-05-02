@@ -5,9 +5,14 @@ import hero_desktop from '../../assets/images/hero.png';
 import hero_small from '../../assets/images/hero-small.png';
 import { Link } from 'react-scroll';
 
+
 const size = {
-  mobile: '414px'
-}
+  mobile: '414px',
+  tablet: '768px',
+  tablet_max: '1024px',
+  max_mid: '1110px',
+  max_large: '1280px',
+};
 
 const StyledHero = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -20,8 +25,9 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
   @media (max-width: ${size.mobile}) {
-    height: 248px; 
-    margin-top: 105px;
+    width: 100%;
+    height: 280px; 
+    margin-top: 106px;
   }
 `;
 
@@ -33,6 +39,16 @@ const Label = styled.h2`
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 55px;
   padding-top: 169px;
+  text-align: center;
+  @media (max-width: ${size.max_large}) {
+    font-size: 45px;
+  }
+  @media (max-width: ${size.max_mid}) {
+    font-size: 37px;
+  }
+  @media (max-width: ${size.tablet_max}) {
+    font-size: 28px;
+  }
   @media (max-width: ${size.mobile}) {
     font-size: 15px;
     letter-spacing: 2px;
@@ -52,6 +68,13 @@ const Button = styled.button`
   letter-spacing: 2.79px;
   color: #000000;
   font-family: Roboto; 
+  @media (max-width: ${size.tablet_max}) {
+    width: 135px;
+    height: 45px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.96px;
+  }
   @media (max-width: ${size.mobile}) {
     width: 104px;
     height: 26px;
@@ -62,7 +85,8 @@ const Button = styled.button`
 `;
 
 export default function Hero() {
-  const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
+  // const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 414px)' });
   const hero = isMobile ? hero_small : hero_desktop;
   return (
     <StyledHero hero={hero}>
