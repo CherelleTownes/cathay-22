@@ -170,7 +170,8 @@ export default function Header() {
             to="special-events"
             spy={true}
             smooth={true}
-            offset={-165}
+            // offset={-165}
+            offset={-171}
             duration={500}
           >
             SPECIAL EVENTS

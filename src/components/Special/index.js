@@ -44,7 +44,7 @@ const SpecialImg = styled.img`
   grid-area: 1 / col4-start / last-line / 4;
   align-self: center;
   @media (max-width: ${size.tablet_max}) {
-   /* width: 339px;
+    /* width: 339px;
    height: 442px; */
   }
   @media (max-width: ${size.mobile}) {
@@ -109,6 +109,7 @@ const Text = styled.p`
   }
   @media (max-width: ${size.tablet.max}) {
     font-size: 14px;
+  }
   @media (max-width: ${size.mobile}) {
     font-size: 8px;
     line-height: 1;
@@ -161,7 +162,7 @@ const Button = styled.button`
   color: #000000;
   font-family: Roboto;
   @media (max-width: ${size.tablet_max}) {
-    width: ${(props) => props.width-25}px;
+    width: ${(props) => props.width-10}px;
     font-size: 15px;
   }
   @media (max-width: ${size.mobile}) {
@@ -189,7 +190,7 @@ export default function Special() {
     height: '95%',
     width: '60%',
   };
-  const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 414px)' });
   const buttonWidthCall = isMobile ? 64 : 175;
   const buttonWidthMenu = isMobile ? 111 : 204;
 
