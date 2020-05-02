@@ -1,45 +1,62 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Document, Page, pdfjs } from 'react-pdf';
 
-export default class Pdf extends Component {
-  state = { numPages: null, pageNumber: 1 };
+const Container = styled.div`
+  position: fixed;
+`;
 
-  onDocumentLoadSuccess = ({ numPages }) => {
-    this.setState({ numPages });
+const Nav = styled.nav`
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  z-index: 2;
+`;
+
+const Button = styled.button``;
+
+const Text = styled.p`
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index: 2;
+`;
+
+export default function Pdf({ pdf }) {
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
+
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
   };
 
-  goToPrevPage = () =>
-    this.setState((state) => ({ pageNumber: state.pageNumber - 1 }));
-  goToNextPage = () =>
-    this.setState((state) => ({ pageNumber: state.pageNumber + 1 }));
+  const goToPrevPage = () => setPageNumber((prevState) => prevState - 1);
 
-  render() {
-    const { pageNumber, numPages } = this.state;
+  const goToNextPage = () => setPageNumber((prevState) => prevState + 1);
 
-    return (
-      <div>
-        <nav>
-          <button onClick={this.goToPrevPage}>Prev</button>
-          <button onClick={this.goToNextPage}>Next</button>
-        </nav>
+  return (
+    <Container>
+      <Nav>
+        <Button onClick={goToPrevPage}>Prev</Button>
+        <Button onClick={goToNextPage}>Next</Button>
+      </Nav>
 
-        <div style={{ width: 600 }}>
-          <Document
-            file={this.props.pdf}
-            onLoadSuccess={this.onDocumentLoadSuccess}
-            options={{
-              cMapUrl: `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/cmaps/`,
-              cMapPacked: true,
-            }}
-          >
-            <Page pageNumber={pageNumber} width={600} />
-          </Document>
-        </div>
-
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
+      <div style={{ width: 600 }}>
+        <Document
+          file={pdf}
+          onLoadSuccess={onDocumentLoadSuccess}
+          options={{
+            cMapUrl: `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/cmaps/`,
+            cMapPacked: true,
+          }}
+        >
+          <Page pageNumber={pageNumber} width={600} />
+        </Document>
       </div>
-    );
-  }
+
+      <Text>
+        Page {pageNumber} of {numPages}
+      </Text>
+    </Container>
+  );
 }

@@ -64,11 +64,6 @@ export default function Popular() {
   const [isOpen, setIsOpen] = useState(false);
   const [dish, setDish] = useState(null);
 
-  const dishSize = {
-    height: '731px',
-    width: '599px',
-  };
-
   const handleOpen = (dish) => {
     setDish(dish);
     setIsOpen(true);
@@ -95,14 +90,7 @@ export default function Popular() {
           ))}
         </Carousel>
       </Grid>
-      {isOpen && (
-        <Modal
-          image={dish.image}
-          close={handleClose}
-          size={dishSize}
-          dish={dish}
-        />
-      )}
+      {isOpen && <Modal image={dish.image} close={handleClose} dish={dish} />}
     </StyledSection>
   );
 }
