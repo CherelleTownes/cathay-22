@@ -27,10 +27,12 @@ const Image = styled.div`
   background-size: cover;
   border-radius: 67px;
 
-  ${Container}:hover & {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(${(props) => props.image});
-    cursor: pointer;
+  @media (min-width: 720px) {
+    ${Container}:hover & {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(${(props) => props.image});
+      cursor: pointer;
+    }
   }
 
   @media (max-width: 414px) {
@@ -48,9 +50,11 @@ const Text = styled.p`
   text-align: center;
   display: none;
 
-  ${Container}:hover & {
-    display: block;
-    cursor: pointer;
+  @media (min-width: 720px) {
+    ${Container}:hover & {
+      display: block;
+      cursor: pointer;
+    }
   }
 `;
 
