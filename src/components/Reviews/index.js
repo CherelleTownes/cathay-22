@@ -12,6 +12,9 @@ const StyledReviews = styled.section`
   height: 641px;
   background-color: #f4eaea;
   width: 100%;
+  @media (max-width: 425px) {
+    height: 176px;
+  }
 `;
 
 const Grid = styled.div`
@@ -21,6 +24,14 @@ const Grid = styled.div`
   padding: 77px 29px 154px 29px;
   max-width: 1440px;
   margin: 0 auto;
+  @media (max-width: 425px) {
+  display: grid;
+  grid-template-rows: 21px 120px;
+  grid-row-gap: 17px;
+  padding: 13px 0px 7px 0px;
+  max-width: 395px;
+  }
+ 
 `;
 
 const ReviewContainer = styled.div`
@@ -28,6 +39,8 @@ const ReviewContainer = styled.div`
   justify-content: space-between;
   a:link {
   text-decoration: none;
+  @media (max-width: 425px) {
+  }
 }
 `;
 
@@ -41,15 +54,14 @@ const Label = styled.h1`
   color: #000000;
   justify-self: center;
   text-transform: uppercase;
+  @media (max-width: 425px) {
+    font-size: 15px;
+    letter-spacing: 0.75px;
+    padding-top: 4px;
+  }
 `;
 
 const TopText = styled.p`
-  /* width: 344px;
-  height: 148px;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: Roboto; */
-  /* display: flex;
-  justify-content: flex-end; */
   font-size: 17px;
   font-weight: bold;
   font-stretch: normal;
@@ -59,6 +71,11 @@ const TopText = styled.p`
   color: #ffffff;
   margin-left: 50px;
   text-transform: uppercase;
+  @media (max-width: 425px) {
+  font-size: 8px;
+  letter-spacing: 0.4px;
+  margin-left: 15px;
+  }
 `;
 
 const Vector = styled.hr`
@@ -66,6 +83,13 @@ const Vector = styled.hr`
   height: 1px;
   border: solid 2px #ea3a3a;
   margin-right: -22px;
+  @media (max-width: 425px) {
+    width: 100px;
+  height: 0px;
+  margin-top: 1px;
+  margin-right: -7px;
+  border: solid .5px #ea3a3a;
+  }
 `;
 
 const BottomText = styled.p`
@@ -82,6 +106,34 @@ const BottomText = styled.p`
   color: #ffffff;
   padding-left: 50px;
   text-transform: uppercase;
+  @media (max-width: 425px) {
+    width: 100px;
+    padding-left: 10px;
+  font-size: 6px;
+  letter-spacing: 0.4px;
+  display: none;
+  }
+`;
+
+const MobileContent = styled.p`
+  display: none;
+  @media (max-width: 425px) {
+  display: inline;
+  width: 100px;
+  font-size: 8px;
+  letter-spacing: 0.4px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Roboto;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: italic;
+  line-height: normal;
+  letter-spacing: 0.85px;
+  color: #ffffff;
+  padding-left: 15px;
+  text-transform: uppercase;
+  margin-top: -3px;
+  }
 `;
 
 
@@ -92,6 +144,10 @@ const ReviewImgContainer = styled.div`
   z-index: 50;
   width: 428px;
   height: 320px;
+  @media (max-width: 425px) {
+    width: 125px;
+    height: 97px;
+  }
   
 `;
 
@@ -104,6 +160,9 @@ const ReviewsImg = styled.img`
   top: 0;
   left: 0;
   z-index: -100;
+  @media (max-width: 425px) {
+    border-radius: 10px;
+  }
 `;
 
 const RecommendationContainer = styled.div`
@@ -112,6 +171,10 @@ const RecommendationContainer = styled.div`
     align-self: flex-start;
     padding-top: 50px;
     margin:0 auto;
+  @media (max-width: 425px) {
+    padding-top: 10px;
+   
+  }
 `;
 
 const Recommendation = styled.img`
@@ -122,6 +185,11 @@ const Recommendation = styled.img`
   display:flex;
   justify-content: flex-end;
   align-self: flex-end;
+  @media (max-width: 425px) {
+    width: 21px;
+  height: 21px;
+  border-radius: 6px;
+  }
 `;
 
 export default function Reviews() {
@@ -142,6 +210,8 @@ export default function Reviews() {
             <Vector />
             <BottomText>Haven't been here for awhile, the food and service is still great. The spicy wontons and cold chengdu noodles are tasty as hell, as is the sea dragon, a whole sea bass in a sweet and spicy sauce....
              </BottomText>
+             <MobileContent>Haven't been here for awhile, the food and service is still great... 
+             </MobileContent>
             </RecommendationContainer>
             <Recommendation src={recommendationImg1} />
             </ReviewImgContainer>
@@ -158,6 +228,8 @@ export default function Reviews() {
             <Vector />
             <BottomText>Always good food and great service. Enjoy the various fish dishes and when we want to go "American Style" they have a nice pupu!
              </BottomText>
+             <MobileContent>Always good food and great service. Enjoy the various fish...
+             </MobileContent>
             </RecommendationContainer>
               <Recommendation src={recommendationImg2} />
           </ReviewImgContainer>
@@ -174,6 +246,8 @@ export default function Reviews() {
             <Vector />
             <BottomText>The food here is fresh and delicious. It is not mass produced take out. I don’t get that awful feeling is used to get when I ate other 
              </BottomText>
+             <MobileContent>The food here is fresh and delicious. It is not mass...
+             </MobileContent>
               </RecommendationContainer>
               <Recommendation src={recommendationImg1} />
             </ReviewImgContainer>

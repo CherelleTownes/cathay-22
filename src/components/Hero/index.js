@@ -5,8 +5,6 @@ import hero_desktop from '../../assets/images/hero.png';
 import hero_small from '../../assets/images/hero-small.png';
 import { Link } from 'react-scroll';
 
-
-
 const size = {
   mobile: '414px',
   tablet: '768px',
@@ -14,7 +12,6 @@ const size = {
   max_mid: '1110px',
   max_large: '1280px',
 };
-
 
 const StyledHero = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -27,15 +24,10 @@ const StyledHero = styled.section`
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 375px) {
-    height: 248px;
-    margin-top: 105px;
-
   @media (max-width: ${size.mobile}) {
     width: 100%;
-    height: 280px; 
+    height: 280px;
     margin-top: 106px;
-
   }
 `;
 
@@ -75,7 +67,7 @@ const Button = styled.button`
   line-height: 1.33;
   letter-spacing: 2.79px;
   color: #000000;
-  font-family: Roboto; 
+  font-family: Roboto;
   @media (max-width: ${size.tablet_max}) {
     width: 135px;
     height: 45px;
@@ -93,8 +85,7 @@ const Button = styled.button`
 `;
 
 export default function Hero() {
-  // const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
-  const isMobile = useMediaQuery({ query: '(max-width: 414px)' });
+  const isMobile = useMediaQuery({ query: `(max-width: ${size.mobile})` });
   const hero = isMobile ? hero_small : hero_desktop;
   return (
     <StyledHero hero={hero}>
