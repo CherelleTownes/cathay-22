@@ -85,7 +85,7 @@ const Button = styled.button`
 `;
 
 export default function Hero() {
-  const isMobile = useMediaQuery({ query: '(max-width: 414px)' });
+  const isMobile = useMediaQuery({ query: `(max-width: ${size.mobile})` });
   const hero = isMobile ? hero_small : hero_desktop;
   return (
     <StyledHero hero={hero}>
