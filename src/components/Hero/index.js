@@ -4,22 +4,20 @@ import { useMediaQuery } from 'react-responsive';
 import hero_desktop from '../../assets/images/hero.png';
 import hero_small from '../../assets/images/hero-small.png';
 import { Link } from 'react-scroll';
-import hero from '../../assets/images/hero.png';
 
 const StyledHero = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url(${(props) => props.hero});
+    url(${(props) => props.hero});
   height: 771px;
   background-size: cover;
-  background-position: 25% 30%;
+  background-position: 25% 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   @media (max-width: 375px) {
-    height: 248px; 
+    height: 248px;
     margin-top: 105px;
-  
   }
 `;
 
