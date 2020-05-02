@@ -49,7 +49,6 @@ const Layout = styled.div`
     grid-column-gap: 0px;
     padding: 0;
   }
-  
 `;
 
 const Logo = styled.img`
@@ -92,7 +91,7 @@ const Nav = styled.nav`
     width: 100%;
     place-self: center;
     padding: 0 22px;
-  } 
+  }
   @media (max-width: ${size.table}) {
     width: 100%;
     place-self: center;
@@ -104,7 +103,7 @@ const Nav = styled.nav`
     grid-row: 3;
     place-self: center;
     padding: 0 22px;
-  } 
+  }
   @media (max-width: ${size.mobile_s}) {
     width: 100%;
     grid-column: 1;
@@ -130,7 +129,7 @@ const Link = styled(Scroll.Link)`
     font-size: 21px;
   }
   @media (max-width: ${size.tablet_max}) {
-   font-size: 18px;
+    font-size: 18px;
   }
   @media (max-width: ${size.mobile}) {
     font-size: 11px;

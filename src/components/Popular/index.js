@@ -4,6 +4,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 import Modal from '../Modal';
+import Heading from '../shared/Heading';
 import DishImage from './DishImage';
 import { CustomLeftArrow, CustomRightArrow } from './customArrows';
 import dishes from './dishes';
@@ -30,33 +31,21 @@ const Grid = styled.div`
   }
 `;
 
-const Heading = styled.h2`
-  justify-self: center;
-  font-size: 35px;
-  font-weight: bold;
-  letter-spacing: 1.75px;
-  color: #000000;
-
-  @media (max-width: 414px) {
-    font-size: 15px;
-    font-weight: bold;
-    letter-spacing: 0.75px;
-    align-self: center;
-  }
-`;
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
     items: 2,
+    partialVisibilityGutter: 30,
   },
   tablet: {
     breakpoint: { max: 1024, min: 464 },
     items: 2,
+    partialVisibilityGutter: 30,
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 2,
+    partialVisibilityGutter: 30,
   },
 };
 

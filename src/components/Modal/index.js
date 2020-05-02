@@ -9,16 +9,20 @@ const Outer = styled.div`
   left: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: 1000;
+  z-index: 1001;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
 
-  body {
-    overscroll-behavior-y: hidden;
-  }
+const Shim = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
 `;
 
 const Image = styled.img`
@@ -55,10 +59,9 @@ const ModalText = styled.p`
 `;
 
 export default function Modal({ image, close, dish }) {
-  const handleClick = (e) => e.stopPropagation();
-
   return (
-    <Outer onClick={close}>
+    <Outer>
+      <Shim onClick={close} />
       {dish ? (
         <>
           <Image src={image} />
@@ -69,7 +72,7 @@ export default function Modal({ image, close, dish }) {
           </ModalText>
         </>
       ) : (
-        <Pdf pdf={image} onClick={handleClick} />
+        <Pdf pdf={image} />
       )}
     </Outer>
   );

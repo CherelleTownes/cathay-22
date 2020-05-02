@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Modal from '../Modal';
+import Heading from '../shared/Heading';
 import menus from './menus';
 import takeOutImg from '../../assets/images/trip-advisor-review-1.png';
 import lunchImg from '../../assets/images/menuDish/lunch-cropped.jpeg';
@@ -35,20 +36,6 @@ const Grid = styled.div`
 const MenusBox = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-
-const Heading = styled.h2`
-  font-size: 35px;
-  font-weight: bold;
-  letter-spacing: 1.75px;
-  color: #000000;
-  justify-self: center;
-
-  @media (max-width: 414px) {
-    font-size: 15px;
-    letter-spacing: 0.75px;
-    align-self: center;
-  }
 `;
 
 const Container = styled.div`
