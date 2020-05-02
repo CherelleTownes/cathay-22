@@ -7,7 +7,7 @@ const size = {
   mobile: '414px',
   tablet: '768px',
   tablet_max: '1024px',
-  max_mid: '1110px',
+  max_mid: '1120px',
   max_large: '1280px',
 };
 
@@ -110,7 +110,7 @@ const Link = styled(Scroll.Link)`
     font-size: 21px;
   }
   @media (max-width: ${size.tablet_max}) {
-   font-size: 19px;
+   font-size: 18px;
   }
   @media (max-width: ${size.mobile}) {
     font-size: 11px;
