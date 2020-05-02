@@ -4,6 +4,7 @@ import * as Scroll from 'react-scroll';
 import logo from '../../assets/images/cathay22_logo.png';
 
 const size = {
+  mobile_s: '375px',
   mobile: '414px',
   tablet: '768px',
   tablet_max: '1024px',
@@ -18,8 +19,9 @@ const StyledHeader = styled.header`
   width: 100%;
   z-index: 1000;
   top: 0;
+  /* @media (max-width: ${size.tablet}) {
+  } */
   @media (max-width: ${size.mobile}) {
-    max-width: ${size.mobile};
     height: 141px;
   }
 `;
@@ -35,17 +37,19 @@ const Layout = styled.div`
     grid-template-columns: 27% 2% 1fr 6%;
   }
   @media (max-width: ${size.max_mid}) {
-    grid-template-columns: 26% 2% 1fr 4%;
+    grid-template-columns: 27% 2% 1fr 4%;
   }
-  @media (max-width: ${size.tablet_max}) {
-    grid-template-columns: 25% 1% 1fr 3%;
+  @media (max-width: ${size.tablet}) {
+    grid-template-columns: 28% 1% 1fr 3%;
+    padding: 0;
   }
   @media (max-width: ${size.mobile}) {
-    grid-template-columns: ${size.mobile};
+    grid-template-columns: 1fr;
     grid-template-rows: 25px 1fr 38px;
     grid-column-gap: 0px;
     padding: 0;
   }
+  
 `;
 
 const Logo = styled.img`
@@ -84,13 +88,29 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: ${size.table_max}) {
+    width: 100%;
+    place-self: center;
+    padding: 0 22px;
+  } 
+  @media (max-width: ${size.table}) {
+    width: 100%;
+    place-self: center;
+    padding: 0 22px;
+  }
   @media (max-width: ${size.mobile}) {
     width: 100%;
-    justify-content: space-around;
     grid-column: 1;
     grid-row: 3;
     place-self: center;
     padding: 0 22px;
+  } 
+  @media (max-width: ${size.mobile_s}) {
+    width: 100%;
+    grid-column: 1;
+    grid-row: 3;
+    place-self: center;
+    padding: 0 8px;
   }
 `;
 
@@ -114,6 +134,10 @@ const Link = styled(Scroll.Link)`
   }
   @media (max-width: ${size.mobile}) {
     font-size: 11px;
+  }
+  @media (max-width: ${size.mobile_s}) {
+    font-size: 11px;
+    letter-spacing: 3.2px;
   }
 `;
 
