@@ -5,11 +5,16 @@ import 'react-multi-carousel/lib/styles.css';
 
 import Modal from '../Modal';
 import DishImage from './DishImage';
+import { CustomLeftArrow, CustomRightArrow } from './customArrows';
 import dishes from './dishes';
 
-const StyledPopular = styled.section`
+const StyledSection = styled.section`
   height: 684px;
   background-color: #f4eaea;
+
+  @media (max-width: 414px) {
+    height: 176px;
+  }
 `;
 
 const Grid = styled.div`
@@ -17,6 +22,12 @@ const Grid = styled.div`
   grid-template-rows: 41px 352px;
   grid-row-gap: 65px;
   padding: 78px 0 148px 0;
+
+  @media (max-width: 414px) {
+    grid-template-rows: 18px 91px;
+    grid-row-gap: 18px;
+    padding: 16px 0 33px 0;
+  }
 `;
 
 const Heading = styled.h2`
@@ -25,6 +36,13 @@ const Heading = styled.h2`
   font-weight: bold;
   letter-spacing: 1.75px;
   color: #000000;
+
+  @media (max-width: 414px) {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.75px;
+    align-self: center;
+  }
 `;
 
 const responsive = {
@@ -62,10 +80,16 @@ export default function Popular() {
   };
 
   return (
-    <StyledPopular>
+    <StyledSection>
       <Grid>
         <Heading>SPECIALS AND POPULAR ITEMS</Heading>
-        <Carousel responsive={responsive} centerMode={true} infinite={true}>
+        <Carousel
+          responsive={responsive}
+          centerMode={true}
+          infinite={true}
+          customRightArrow={<CustomRightArrow />}
+          customLeftArrow={<CustomLeftArrow />}
+        >
           {dishes.map((dish, i) => (
             <DishImage key={i} dish={dish} handleOpen={handleOpen} />
           ))}
@@ -79,6 +103,6 @@ export default function Popular() {
           dish={dish}
         />
       )}
-    </StyledPopular>
+    </StyledSection>
   );
 }

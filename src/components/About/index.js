@@ -10,19 +10,27 @@ const StyledAbout = styled.section`
 
   height: 710px;
   background-size: cover;
+  @media (max-width: 375px) {
+    width: 375px;
+    height: 230px;
+  }
 `;
 
 const Layout = styled.div`
   display: grid;
-  grid-template-columns: 205px 1023px 212px;
-  grid-template-rows: 133px 25px 311px auto;
+  /* grid-template-columns: 205px 1023px 212px; */
+  /* grid-template-rows: 133px 25px 311px 241px; */
+  grid-template-columns: 13% 74% 13%;
+  grid-template-rows: 18% 4% 44% 34%;
   height: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  @media (max-width: 375px) {
+    grid-template-columns: 4% 92% 4%;
+  }
 `;
 
 const Label = styled.h1`
-  width: 1023px;
   height: 41px;
   font-size: 35px;
   font-weight: bold;
@@ -35,17 +43,23 @@ const Label = styled.h1`
   grid-column: 2;
   grid-row: 1;
   align-self: flex-end;
+  @media (max-width: 375px) {
+    height: 18px;
+    font-size: 15px;
+    letter-spacing: 1.75px;
+  }
 `;
 
 const ContainerText = styled.div`
-  width: 1023px;
   height: 228px;
   grid-column: 2;
   grid-row: 3;
+  @media (max-width: 375px) {
+    height: 131px;
+  }
 `;
 
 const Text = styled.p`
-  width: 1015px;
   font-size: 25px;
   font-weight: 500;
   font-stretch: normal;
@@ -55,21 +69,26 @@ const Text = styled.p`
   color: #ffffff;
   padding-bottom: 30px;
   text-align: center;
+  @media (max-width: 375px) {
+    font-size: 8px;
+    letter-spacing: 0.16px;
+    padding-bottom: 10px;
+  }
 `;
 
 const ContainerLink = styled.div`
-  width: 1023px;
   height: 40px;
   grid-column: 2;
   grid-row: 4;
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 375px) {
+    height: 12px;
+  }
 `;
 
 const Link = styled.h2`
-  width: ${(props) => props.width};
-  /* width: 220px; */
   height: 35px;
   font-size: 25px;
   font-weight: bold;
@@ -78,13 +97,24 @@ const Link = styled.h2`
   line-height: 1.33;
   letter-spacing: 3.88px;
   color: #ffffff;
-  text-align: center;
+  padding-right: 10px;
+
+  @media (max-width: 375px) {
+    height: 13px;
+    font-size: 12px;
+    letter-spacing: 1.86px;
+  }
 `;
 
 const LinkImg = styled.img`
   width: 43px;
   height: 35px;
   border-radius: 5px;
+  @media (max-width: 375px) {
+    width: 12px;
+    height: 10px;
+    border-radius: 1px;
+  }
 `;
 
 export default function About() {
@@ -95,7 +125,7 @@ export default function About() {
   };
 
   return (
-    <StyledAbout id="about">
+    <StyledAbout id="about" name="about">
       <Layout>
         <Label>ABOUT US</Label>
         <ContainerText>
@@ -123,7 +153,7 @@ export default function About() {
                 luncheon will always be enjoyable.
               </Text>
               <ContainerLink>
-                <Link width="130px">CLOSED</Link>)
+                <Link>CLOSED</Link>
                 <LinkImg src={close_arrow} onClick={(e) => handleOpen(e)} />
               </ContainerLink>
             </>
@@ -131,7 +161,7 @@ export default function About() {
         </ContainerText>
         {!isOpen && (
           <ContainerLink>
-            <Link width="210px">FULL STORY</Link>
+            <Link>FULL STORY</Link>
             <LinkImg src={open_arrow} onClick={(e) => handleOpen(e)} />
           </ContainerLink>
         )}

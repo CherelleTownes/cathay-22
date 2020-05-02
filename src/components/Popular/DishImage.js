@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -11,17 +11,32 @@ const Container = styled.div`
   height: 352px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
   border-radius: 67px;
+
+  @media (max-width: 414px) {
+    width: 92px;
+    height: 91px;
+    border-radius: 15px;
+  }
 `;
 
-const Image = styled.img`
+const Image = styled.div`
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  background-image: url(${(props) => props.image});
+  background-position: center;
+  background-size: cover;
   border-radius: 67px;
 
-  &:hover {
-    filter: brightness(45%);
-    cursor: pointer;
+  @media (min-width: 720px) {
+    ${Container}:hover & {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(${(props) => props.image});
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 414px) {
+    border-radius: 15px;
   }
 `;
 
@@ -33,24 +48,25 @@ const Text = styled.p`
   letter-spacing: 3.25px;
   color: #ffffff;
   text-align: center;
+  display: none;
+
+  @media (min-width: 720px) {
+    ${Container}:hover & {
+      display: block;
+      cursor: pointer;
+    }
+  }
 `;
 
 export default function DishImage({ dish, handleOpen }) {
-  const [isHover, setIsHover] = useState(false);
   return (
-    <Container
-      onMouseEnter={() => setIsHover(!isHover)}
-      onMouseLeave={() => setIsHover(!isHover)}
-      onClick={() => handleOpen(dish)}
-    >
-      <Image src={dish.image} />
-      {isHover && (
-        <Text>
-          {dish.name}
-          <br />
-          {dish.price}
-        </Text>
-      )}
+    <Container onClick={() => handleOpen(dish)}>
+      <Image image={dish.image} />
+      <Text onClick={() => handleOpen(dish)}>
+        {dish.name}
+        <br />
+        {dish.price}
+      </Text>
     </Container>
   );
 }

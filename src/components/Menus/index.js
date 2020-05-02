@@ -15,6 +15,10 @@ import wineListMenu from '../../assets/menus/winelist2.png';
 const StyledSection = styled.section`
   height: 570px;
   background-color: #f4eaea;
+
+  @media (max-width: 414px) {
+    height: 179px;
+  }
 `;
 
 const Grid = styled.div`
@@ -24,68 +28,91 @@ const Grid = styled.div`
   padding: 70px 61px 104px 62px;
   max-width: 1440px;
   margin: 0 auto;
+
+  @media (max-width: 414px) {
+    grid-template-rows: 18px 93px;
+    grid-row-gap: 17px;
+    padding: 15px 9px 36px 8px;
+  }
 `;
 
-const MenusContainer = styled.div`
+const MenusBox = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const Label = styled.h1`
+const Heading = styled.h2`
   font-size: 35px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: 1.75px;
   color: #000000;
   justify-self: center;
+
+  @media (max-width: 414px) {
+    font-size: 15px;
+    letter-spacing: 0.75px;
+    align-self: center;
+  }
 `;
 
-const Title = styled.p`
-  font-size: 25px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: 1.25px;
-  color: #ffffff;
-`;
-
-const MenuImgContainer = styled.div`
+const Container = styled.div`
   position: relative;
-  width: 290.1px;
-  height: 341.4px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* filter: brightness(50%); */
-  /* background: rgba(0, 0, 0, 0.6); */
-  z-index: 50;
+  width: 290.1px;
+  height: 341.4px;
+  border-radius: 45px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @media (max-width: 414px) {
+    width: 78.7px;
+    height: 92.6px;
+    border-radius: 15px;
+  }
 `;
 
-const MenuImg = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -100;
+const Image = styled.div`
   width: 100%;
   height: 100%;
-  filter: brightness(45%);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(${(props) => props.image});
+  background-size: cover;
   border-radius: 45px;
-  /* opacity: 0.8;
-  background-color: #000000; */
+
+  @media (max-width: 414px) {
+    border-radius: 15px;
+  }
+`;
+
+const Title = styled.p`
+  position: absolute;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 1.25px;
+  color: #ffffff;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.5);
+
+  @media (max-width: 414px) {
+    font-size: 8px;
+    letter-spacing: 0.4px;
+  }
 `;
 
 export default function Menus() {
   const [isOpen, setIsOpen] = useState(false);
   const [menu, setMenu] = useState('');
+
   const menus = {
     takeOut: takeOutMenu,
     dineIn: dineInMenu,
     wineList: wineListMenu,
     lunch: lunchMenu,
   };
+
   const menuSize = {
     height: '95%',
     width: '60%',
@@ -101,27 +128,27 @@ export default function Menus() {
   };
 
   return (
-    <StyledSection id="menu">
+    <StyledSection id="menu" name="menu">
       <Grid>
-        <Label>Menus</Label>
-        <MenusContainer>
-          <MenuImgContainer onClick={() => handleOpen('takeOut')}>
-            <MenuImg src={takeOutImg} />
+        <Heading>MENUS</Heading>
+        <MenusBox>
+          <Container onClick={() => handleOpen('takeOut')}>
+            <Image image={takeOutImg} />
             <Title>TAKEOUT</Title>
-          </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen('lunch')}>
-            <MenuImg src={lunchImg} />
+          </Container>
+          <Container onClick={() => handleOpen('lunch')}>
+            <Image image={lunchImg} />
             <Title>LUNCH</Title>
-          </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen('dineIn')}>
-            <MenuImg src={dineInImg} />
+          </Container>
+          <Container onClick={() => handleOpen('dineIn')}>
+            <Image image={dineInImg} />
             <Title>DINNER</Title>
-          </MenuImgContainer>
-          <MenuImgContainer onClick={() => handleOpen('wineList')}>
-            <MenuImg src={wineListImg} />
+          </Container>
+          <Container onClick={() => handleOpen('wineList')}>
+            <Image image={wineListImg} />
             <Title>WINE LIST</Title>
-          </MenuImgContainer>
-        </MenusContainer>
+          </Container>
+        </MenusBox>
       </Grid>
       {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
     </StyledSection>
