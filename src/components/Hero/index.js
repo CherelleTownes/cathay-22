@@ -6,6 +6,7 @@ import hero_small from '../../assets/images/hero-small.png';
 import { Link } from 'react-scroll';
 
 
+
 const size = {
   mobile: '414px',
   tablet: '768px',
@@ -14,20 +15,27 @@ const size = {
   max_large: '1280px',
 };
 
+
 const StyledHero = styled.section`
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-  url(${(props) => props.hero});
+    url(${(props) => props.hero});
   height: 771px;
   background-size: cover;
-  background-position: 25% 30%;
+  background-position: 25% 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 375px) {
+    height: 248px;
+    margin-top: 105px;
+
   @media (max-width: ${size.mobile}) {
     width: 100%;
     height: 280px; 
     margin-top: 106px;
+
   }
 `;
 
