@@ -41,6 +41,7 @@ const Heading = styled.h2`
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.75px;
+    align-self: center;
   }
 `;
 
