@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Modal from '../Modal';
 
+import Modal from '../Modal';
+import menus from './menus';
 import takeOutImg from '../../assets/images/trip-advisor-review-1.png';
 import lunchImg from '../../assets/images/menuDish/lunch-cropped.jpeg';
 import dineInImg from '../../assets/images/menuDish/dinner.jpg';
 import wineListImg from '../../assets/images/menuDish/winelist-cropped.jpg';
-
-import takeOutMenu from '../../assets/menus/takeout-menu2.png';
-import lunchMenu from '../../assets/menus/lunch-menu2.png';
-import dineInMenu from '../../assets/menus/dine-in-menu2.png';
-import wineListMenu from '../../assets/menus/winelist2.png';
 
 const StyledSection = styled.section`
   height: 570px;
@@ -106,18 +102,6 @@ export default function Menus() {
   const [isOpen, setIsOpen] = useState(false);
   const [menu, setMenu] = useState('');
 
-  const menus = {
-    takeOut: takeOutMenu,
-    dineIn: dineInMenu,
-    wineList: wineListMenu,
-    lunch: lunchMenu,
-  };
-
-  const menuSize = {
-    height: '95%',
-    width: '60%',
-  };
-
   const handleOpen = (menu) => {
     setMenu(menus[menu]);
     setIsOpen(!isOpen);
@@ -150,7 +134,7 @@ export default function Menus() {
           </Container>
         </MenusBox>
       </Grid>
-      {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
+      {isOpen && <Modal image={menu} close={handleClose} />}
     </StyledSection>
   );
 }

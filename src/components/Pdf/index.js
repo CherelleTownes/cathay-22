@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Document, Page } from 'react-pdf';
-import winelist from '../../assets/menus/Cathay22_winelist_809.pdf';
+import { Document, Page, pdfjs } from 'react-pdf';
 
 export default class Pdf extends Component {
   state = { numPages: null, pageNumber: 1 };
@@ -25,7 +24,14 @@ export default class Pdf extends Component {
         </nav>
 
         <div style={{ width: 600 }}>
-          <Document file={winelist} onLoadSuccess={this.onDocumentLoadSuccess}>
+          <Document
+            file={this.props.pdf}
+            onLoadSuccess={this.onDocumentLoadSuccess}
+            options={{
+              cMapUrl: `//cdn.jsdelivr.net/npm/pdfjs-dist@${pdfjs.version}/cmaps/`,
+              cMapPacked: true,
+            }}
+          >
             <Page pageNumber={pageNumber} width={600} />
           </Document>
         </div>

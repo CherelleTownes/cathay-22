@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Pdf from '../Pdf';
+
 const Outer = styled.div`
   position: fixed;
   top: 0;
@@ -17,14 +19,11 @@ const Outer = styled.div`
   align-items: center;
 `;
 
-const Inner = styled.img`
-  height: ${(props) => props.size.height};
-  width: ${(props) => props.size.width};
+const Image = styled.img`
+  height: 731px;
+  width: 599px;
   object-fit: cover;
-  /* try converting this into a div to add scrolling for menus 
-  resize: both;
-  overflow: scroll; */
-  ${(props) => props.isDish && 'border-radius: 40px;'}
+  border-radius: 40px;
 
   @media (max-width: 414px) {
     position: fixed;
@@ -54,16 +53,20 @@ const ModalText = styled.p`
   }
 `;
 
-export default function Modal({ image, close, size, dish }) {
+export default function Modal({ image, close, dish }) {
   return (
     <Outer onClick={close}>
-      <Inner src={image} size={size} isDish={dish} />
-      {dish && (
-        <ModalText>
-          {dish.name}
-          <br />
-          {dish.price}
-        </ModalText>
+      {dish ? (
+        <>
+          <Image src={image} />
+          <ModalText>
+            {dish.name}
+            <br />
+            {dish.price}
+          </ModalText>
+        </>
+      ) : (
+        <Pdf pdf={image} />
       )}
     </Outer>
   );
