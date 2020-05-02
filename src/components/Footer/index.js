@@ -74,12 +74,14 @@ const Logo = styled.img`
   height: 88px;
   width: 88px;
   margin-left: 32px;
+  border-radius: 18px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
   @media (max-width: 414px) {
     width: 30px;
     height: 30px;
     margin-left: 10px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 6px;
   }
 `;
 
