@@ -1,36 +1,30 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
-import Pdf from '../Pdf';
 
-const ModalContainer = styled(motion.div)`
+const Outer = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1001;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-const Shim = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background: rgba(0, 0, 0, 0.6);
-`;
-
-const ModalImage = styled.img`
-  position: absolute;
-  height: 731px;
-  width: 599px;
+const Inner = styled.img`
+  height: ${(props) => props.size.height};
+  width: ${(props) => props.size.width};
   object-fit: cover;
-  border-radius: 40px;
+  /* try converting this into a div to add scrolling for menus 
+  resize: both;
+  overflow: scroll; */
+  ${(props) => props.isDish && 'border-radius: 40px;'}
 
   @media (max-width: 414px) {
     position: fixed;
@@ -53,33 +47,24 @@ const ModalText = styled.p`
   @media (max-width: 414px) {
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.45);
     font-size: 15px;
+    font-weight: bold;
+    line-height: 1.31;
     letter-spacing: 1.95px;
     color: #e5e5e5;
   }
 `;
 
-export default function Modal({ image, close, dish }) {
+export default function Modal({ image, close, size, dish }) {
   return (
-    <AnimatePresence>
-      <ModalContainer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-        <Shim onClick={close} />
-        {dish ? (
-          <>
-            <ModalImage src={image} />
-            <ModalText>
-              {dish.name}
-              <br />
-              {dish.price}
-            </ModalText>
-          </>
-        ) : (
-          <Pdf pdf={image} />
-        )}
-      </ModalContainer>
-    </AnimatePresence>
+    <Outer onClick={close}>
+      <Inner src={image} size={size} isDish={dish} />
+      {dish && (
+        <ModalText>
+          {dish.name}
+          <br />
+          {dish.price}
+        </ModalText>
+      )}
+    </Outer>
   );
 }

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { motion, AnimatePresence } from 'framer-motion';
 import about from '../../assets/images/about-us-background.jpg';
 import open_arrow from '../../assets/images/arrows/about-arrow-down.png';
 import close_arrow from '../../assets/images/arrows/about-arrow-up.png';
@@ -190,35 +189,24 @@ export default function About() {
             who work magic with spices and ingredients imported directly from
             China, such as star anise Ba-jhiao and prickly seeds Hua-Jhiao.
           </Text>
-          <AnimatePresence initial={false}>
-            {isOpen && (
-              <motion.div
-                key="content"
-                initial="collapsed"
-                animate="open"
-                exit="collapsed"
-                variants={{
-                  open: { opacity: 1, height: 'auto' },
-                  collapsed: { opacity: 0, height: 0 },
-                }}
-              >
-                <Text>
-                  One-of-a-kind dishes marry true traditions with a supervising
-                  kick, as evidenced in Cathay 22's "crazy beef" (beef
-                  tenderloin in an unforgettable spicy oil) and "Golden Coins"
-                  (golden fried puffs filled with meat and eggplant).
-                </Text>
-                <Text>
-                  At Cathay 22, a family meal, a romantic dinner, or a business
-                  luncheon will always be enjoyable.
-                </Text>
-                <ContainerLink>
-                  <Link>CLOSED</Link>
-                  <LinkImg src={close_arrow} onClick={(e) => handleOpen(e)} />
-                </ContainerLink>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {isOpen && (
+            <>
+              <Text>
+                One-of-a-kind dishes marry true traditions with a supervising
+                kick, as evidenced in Cathay 22's "crazy beef" (beef tenderloin
+                in an unforgettable spicy oil) and "Golden Coins" (golden fried
+                puffs filled with meat and eggplant).
+              </Text>
+              <Text>
+                At Cathay 22, a family meal, a romantic dinner, or a business
+                luncheon will always be enjoyable.
+              </Text>
+              <ContainerLink>
+                <Link>CLOSED</Link>
+                <LinkImg src={close_arrow} onClick={(e) => handleOpen(e)} />
+              </ContainerLink>
+            </>
+          )}
         </ContainerText>
         {!isOpen && (
           <ContainerLink>
