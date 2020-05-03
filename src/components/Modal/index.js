@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { motion, AnimatePresence } from 'framer-motion';
 import Pdf from '../Pdf';
 
-const Outer = styled.div`
+const ModalContainer = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
@@ -25,7 +25,7 @@ const Shim = styled.div`
   background: rgba(0, 0, 0, 0.6);
 `;
 
-const Image = styled.img`
+const ModalImage = styled.img`
   position: absolute;
   height: 731px;
   width: 599px;
@@ -60,20 +60,26 @@ const ModalText = styled.p`
 
 export default function Modal({ image, close, dish }) {
   return (
-    <Outer>
-      <Shim onClick={close} />
-      {dish ? (
-        <>
-          <Image src={image} />
-          <ModalText>
-            {dish.name}
-            <br />
-            {dish.price}
-          </ModalText>
-        </>
-      ) : (
-        <Pdf pdf={image} />
-      )}
-    </Outer>
+    <AnimatePresence>
+      <ModalContainer
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <Shim onClick={close} />
+        {dish ? (
+          <>
+            <ModalImage src={image} />
+            <ModalText>
+              {dish.name}
+              <br />
+              {dish.price}
+            </ModalText>
+          </>
+        ) : (
+          <Pdf pdf={image} />
+        )}
+      </ModalContainer>
+    </AnimatePresence>
   );
 }
