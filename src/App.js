@@ -1,5 +1,6 @@
 import React from 'react';
-import GlobalStyle from './components/styles/GlobalStyle';
+
+import GlobalStyle from './components/shared/GlobalStyle';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Popular from './components/Popular';

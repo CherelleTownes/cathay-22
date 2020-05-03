@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Modal from '../Modal';
 import { useMediaQuery } from 'react-responsive';
+
+import Modal from '../Modal';
 import special from '../../assets/images/special-events.png';
-import specialMenu from '../../assets/menus/new-year-menu.png';
+import specialMenu from '../../assets/menus/specialMenu.pdf';
 
 const size = {
   mobile: '414px',
@@ -162,7 +163,7 @@ const Button = styled.button`
   color: #000000;
   font-family: Roboto;
   @media (max-width: ${size.tablet_max}) {
-    width: ${(props) => props.width-10}px;
+    width: ${(props) => props.width - 10}px;
     font-size: 15px;
   }
   @media (max-width: ${size.mobile}) {
@@ -186,11 +187,7 @@ export default function Special() {
     setIsOpen(!isOpen);
   };
 
-  const menuSize = {
-    height: '95%',
-    width: '60%',
-  };
-  const isMobile = useMediaQuery({ query: '(max-width: 414px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 375px)' });
   const buttonWidthCall = isMobile ? 64 : 175;
   const buttonWidthMenu = isMobile ? 111 : 204;
 
@@ -223,7 +220,7 @@ export default function Special() {
           >
             CHINESE NEW YEAR MENU '20
           </Button>
-          {isOpen && <Modal image={menu} close={handleClose} size={menuSize} />}
+          {isOpen && <Modal image={menu} close={handleClose} />}
         </ContainerButton>
         <SpecialImg src={special} />
       </Layout>
