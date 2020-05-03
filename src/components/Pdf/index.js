@@ -1,7 +1,7 @@
-import React, { useState } from './node_modules/react';
-import styled from './node_modules/styled-components';
-import { Document, Page, pdfjs } from './node_modules/react-pdf';
-import { useMediaQuery } from './node_modules/react-responsive';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Document, Page, pdfjs } from 'react-pdf';
+import { useMediaQuery } from 'react-responsive';
 
 const Container = styled.div`
   position: fixed;
