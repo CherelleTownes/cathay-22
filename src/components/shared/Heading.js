@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Heading = styled.h2`
   justify-self: center;
   align-self: center;
-  font-size: 35px;
+  font-size: 34px;
   font-weight: bold;
   letter-spacing: 1.75px;
   color: #000000;
