@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
-import Pdf from '../PDF';
+import Pdf from '../Pdf';
 
 const ModalContainer = styled(motion.div)`
   position: fixed;
