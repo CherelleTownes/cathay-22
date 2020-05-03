@@ -106,7 +106,7 @@ const BottomText = styled.p`
   color: #ffffff;
   padding-left: 50px;
   text-transform: uppercase;
-  @media (max-width: 425px) {
+  @media (max-width: 426px) {
     width: 100px;
     padding-left: 10px;
   font-size: 6px;
