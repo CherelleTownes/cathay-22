@@ -117,6 +117,9 @@ const ContainerLink = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover {
+    cursor: pointer;
+  }
   @media (max-width: ${size.mobile}) {
     height: 12px;
   }
@@ -131,8 +134,9 @@ const Link = styled.h2`
   line-height: 1.33;
   letter-spacing: 3.88px;
   color: #ffffff;
-  padding-right: 10px;
-
+  padding-right: 12px;
+  padding-bottom: 41px;
+ 
   @media (max-width: ${size.tablet_max}) {
     font-size: 22px;
   }
@@ -147,9 +151,7 @@ const LinkImg = styled.img`
   width: 43px;
   height: 35px;
   border-radius: 5px;
-  &:hover {
-    cursor: pointer;
-  }
+  
   @media (max-width: ${size.max_mid}) {
     width: 40px;
     height: 32px;
@@ -221,9 +223,9 @@ export default function About() {
           </AnimatePresence>
         </ContainerText>
         {!isOpen && (
-          <ContainerLink>
+          <ContainerLink onClick={(e) => handleOpen(e)}>
             <Link>FULL STORY</Link>
-            <LinkImg src={open_arrow} onClick={(e) => handleOpen(e)} />
+            <LinkImg src={open_arrow}/>
           </ContainerLink>
         )}
       </Layout>

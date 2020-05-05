@@ -59,6 +59,7 @@ const Text = styled.p`
   letter-spacing: 1.71px;
   color: #000000;
   justify-self: center;
+  line-height: 1.2;
 
   @media (max-width: 414px) {
     font-size: 8px;
@@ -127,7 +128,6 @@ export default function Location() {
             <br />
             <br />
             Tel: 973-467-8688
-            <br />
             <br />
             <br />
             MON - THURS: 11:45 AM - 10:00 PM
