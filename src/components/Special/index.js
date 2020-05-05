@@ -162,6 +162,11 @@ const Button = styled.button`
   letter-spacing: 0.9px;
   color: #000000;
   font-family: Roboto;
+
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (max-width: ${size.tablet_max}) {
     width: ${(props) => props.width - 10}px;
     font-size: 15px;
