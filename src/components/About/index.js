@@ -150,9 +150,7 @@ const LinkImg = styled.img`
   width: 43px;
   height: 35px;
   border-radius: 5px;
-  /* &:hover {
-    cursor: pointer;
-  } */
+  
   @media (max-width: ${size.max_mid}) {
     width: 40px;
     height: 32px;
