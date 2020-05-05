@@ -135,8 +135,8 @@ const Link = styled.h2`
   letter-spacing: 3.88px;
   color: #ffffff;
   padding-right: 12px;
-  /* padding-bottom: 41px; */
- 
+  padding-bottom: 5px;
+
   @media (max-width: ${size.tablet_max}) {
     font-size: 22px;
   }
@@ -151,7 +151,7 @@ const LinkImg = styled.img`
   width: 43px;
   height: 35px;
   border-radius: 5px;
-  
+
   @media (max-width: ${size.max_mid}) {
     width: 40px;
     height: 32px;
@@ -214,9 +214,9 @@ export default function About() {
                   At Cathay 22, a family meal, a romantic dinner, or a business
                   luncheon will always be enjoyable.
                 </Text>
-                <ContainerLink>
+                <ContainerLink onClick={(e) => handleOpen(e)}>
                   <Link>CLOSED</Link>
-                  <LinkImg src={close_arrow} onClick={(e) => handleOpen(e)} />
+                  <LinkImg src={close_arrow} />
                 </ContainerLink>
               </motion.div>
             )}
@@ -225,7 +225,7 @@ export default function About() {
         {!isOpen && (
           <ContainerLink onClick={(e) => handleOpen(e)}>
             <Link>FULL STORY</Link>
-            <LinkImg src={open_arrow}/>
+            <LinkImg src={open_arrow} />
           </ContainerLink>
         )}
       </Layout>
