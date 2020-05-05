@@ -40,10 +40,12 @@ const Heading = styled.h2`
   font-weight: bold;
   letter-spacing: 2.38px;
   color: #ffffff;
+  padding-bottom: 13px;
 
   @media (max-width: 414px) {
     font-size: 10px;
     letter-spacing: 0.75px;
+    padding-bottom: 5px;
   }
 `;
 
@@ -51,10 +53,13 @@ const Text = styled.p`
   font-size: 17px;
   letter-spacing: 1.62px;
   color: #ffffff;
+  line-height: 1.25;
+  padding: 7px 0;
 
   @media (max-width: 414px) {
     font-size: 8px;
     letter-spacing: 0.76px;
+    padding: 4px 0;
   }
 `;
 

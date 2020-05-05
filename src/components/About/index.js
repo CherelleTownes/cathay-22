@@ -134,8 +134,9 @@ const Link = styled.h2`
   line-height: 1.33;
   letter-spacing: 3.88px;
   color: #ffffff;
-  padding-right: 10px;
-
+  padding-right: 12px;
+  padding-bottom: 41px;
+ 
   @media (max-width: ${size.tablet_max}) {
     font-size: 22px;
   }
