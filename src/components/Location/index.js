@@ -99,10 +99,9 @@ const ResText = styled.p`
   border: solid 2px #a32e02;
   font-size: 25px;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 3;
   color: #a32e02;
   text-align: center;
-  padding-top: 20px;
   height: 100%;
   width: 100%;
 

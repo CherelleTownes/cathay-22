@@ -20,9 +20,9 @@ const StyledSection = styled.section`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 41px 352px;
-  grid-row-gap: 65px;
-  padding: 78px 0 148px 0;
+  grid-template-rows: 41px 368px;
+  grid-row-gap: 58px;
+  padding: 78px 0 139px 0;
 
   @media (max-width: 414px) {
     grid-template-rows: 18px 91px;
